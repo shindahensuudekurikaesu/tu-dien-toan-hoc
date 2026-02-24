@@ -311,7 +311,7 @@ tu_dien_chu_de_3 = {
         },
         'Phép chiếu song song': {
             'định nghĩa': r'''Phép đặt tương ứng mỗi điểm M trong không gian với điểm M' trên mặt phẳng (P) theo phương l của đường thẳng cắt (P).''',
-            'kí hiệu': r'''pr_{(P), l} (M) = M'''',
+            'kí hiệu': r'''pr_{(P), l} (M) = M''',
             'công thức': r'''\text{Bảo toàn tính thẳng hàng, thứ tự điểm và tỉ số độ dài đoạn thẳng song song.}''',
             'ví dụ': r'''\text{Hình biểu diễn của hình vuông qua phép chiếu song song là hình bình hành.}''',
             'hình_ve': r'''sp.plotting.plot3d(x, (x, -1, 1), (y, -1, 1), show=False)''',
