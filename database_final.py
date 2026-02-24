@@ -353,7 +353,7 @@ tu_dien_chu_de_3 = {
         },
         'Định lý ba đường vuông góc': {
             'định nghĩa': r'''Cho đường thẳng a không vuông góc với (P) và đường thẳng b nằm trong (P). b vuông góc với a khi và chỉ khi b vuông góc với hình chiếu a' của a trên (P).''',
-            'kí hiệu': r'''b \perp a \Leftrightarrow b \perp a'''',
+            'kí hiệu': r'''b \perp a \Leftrightarrow b \perp a''',
             'công thức': r'''\text{Giúp xác định góc giữa đường thẳng và mặt phẳng.}''',
             'ví dụ': r'''\text{Dùng để chứng minh các cạnh bên vuông góc với các đường chéo của đáy.}''',
             'hình_ve': r'''sp.plotting.plot3d_parametric_line(t, 0, t, (t, 0, 1))''',
@@ -865,7 +865,7 @@ tu_dien_chu_de_3 = {
         },
         'Quy tắc tính đạo hàm cơ bản': {
             'định nghĩa': r'''Các quy tắc để tính đạo hàm của tổng, hiệu, tích, thương các hàm số.''',
-            'kí hiệu': r'''(u+v)', (uv)', (\frac{u}{v})'''',
+            'kí hiệu': r'''(u+v)', (uv)', (\frac{u}{v})''',
             'công thức': ["(u \\pm v)' = u' \\pm v'", "(uv)' = u'v + uv'", "(\\frac{u}{v})' = \\frac{u'v - uv'}{v^2}"],
             'ví dụ': r'''(x \cdot \sin x)' = \sin x + x \cdot \cos x.''',
             'hình_ve': r'''plot(sp.diff(x**3 - 2*x, x), (x, -2, 2), title='Do thi ham dao ham f prime(x)')''',
@@ -873,21 +873,21 @@ tu_dien_chu_de_3 = {
         'Đạo hàm của hàm hợp': {
             'định nghĩa': r'''Nếu y = f(u) và u = u(x) thì đạo hàm của y theo x được tính qua trung gian u.''',
             'kí hiệu': r'''y'_x = y'_u \cdot u'_x''',
-            'công thức': r'''(u^n)' = n \cdot u^{n-1} \cdot u'''',
+            'công thức': r'''(u^n)' = n \cdot u^{n-1} \cdot u''',
             'ví dụ': r'''((x^2+1)^3)' = 3(x^2+1)^2 \cdot 2x = 6x(x^2+1)^2.''',
             'hình_ve': r'''plot(sp.diff((x**2+1)**3, x), (x, -1, 1))''',
         },
         'Đạo hàm của các hàm lượng giác': {
             'định nghĩa': r'''Bảng đạo hàm của 4 hàm số lượng giác cơ bản.''',
-            'kí hiệu': r'''(\sin x)', (\cos x)', (\tan x)', (\cot x)'''',
+            'kí hiệu': r'''(\sin x)', (\cos x)', (\tan x)', (\cot x)''',
             'công thức': ["(\\sin x)' = \\cos x", "(\\cos x)' = -\\sin x", "(\\tan x)' = \\frac{1}{\\cos^2 x}", "(\\cot x)' = -\\frac{1}{\\sin^2 x}"],
             'ví dụ': r'''(\sin 2x)' = 2\cos 2x.''',
             'hình_ve': r'''plot(sp.sin(x), sp.cos(x), (x, -sp.pi, sp.pi), title='Ham so va Dao ham luong giac')''',
         },
         'Đạo hàm cấp hai': {
             'định nghĩa': r'''Đạo hàm của đạo hàm cấp một. Có ý nghĩa vật lý là gia tốc của chuyển động.''',
-            'kí hiệu': r'''f''(x) \text{ hoặc } y''''',
-            'công thức': r'''f''(x) = (f'(x))'''',
+            'kí hiệu': r'''f''(x) \text{ hoặc } y''',
+            'công thức': r'''f''(x) = (f'(x))''',
             'ví dụ': r'''y = x^3 \Rightarrow y' = 3x^2 \Rightarrow y'' = 6x.''',
             'hình_ve': r'''plot(x**3, 3*x**2, 6*x, (x, -2, 2), title='Dao ham cap 1 va cap 2')''',
         },
