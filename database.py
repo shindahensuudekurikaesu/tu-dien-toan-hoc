@@ -85,7 +85,7 @@ chuong_2_toan_10 = {
         "kí hiệu": r"S = \{(x, y) \in \mathbb{R}^2 \mid ax + by < c\}",
         "công thức": r"\text{Cách xác định: Vẽ đường thẳng } d: ax + by = c, \text{ thử một điểm } M \notin d.",
         "ví dụ": r"\text{Miền nghiệm của } x + y < 1 \text{ là nửa mặt phẳng chứa gốc tọa độ } O(0;0) \text{ bỏ biên.}",
-        "hình_ve": "sp.plot_implicit(x + y < 1, (x, -2, 2), (y, -2, 2), title='Mien nghiem: x + y < 1')""
+        "hình_ve": "sp.plot_implicit(x + y < 1, (x, -2, 2), (y, -2, 2), title='Mien nghiem: x + y < 1')"
     },
     "Hệ bất phương trình bậc nhất hai ẩn": {
         "định nghĩa": r"Gồm hai hay nhiều bất phương trình bậc nhất hai ẩn được xét đồng thời.",
@@ -961,4 +961,5 @@ chuong_9_toan_11 = {
         "hình_ve": "plot(sp.Heaviside(x-0.5), (x, 0, 1), title='Mo phong phan nhanh xac suat')"
     }
 }
+
 
