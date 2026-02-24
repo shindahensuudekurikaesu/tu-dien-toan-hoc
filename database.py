@@ -1,4 +1,4 @@
-tu_dien = {
+chu_de = {
     'Mệnh đề và Tập hợp': {   'Mệnh đề toán học': {   'định nghĩa': 'Là một câu khẳng định có tính đúng hoặc sai rõ '
                                                                     'ràng. Một mệnh đề không thể vừa đúng vừa sai.',
                                                       'kí hiệu': 'P, Q, R',
