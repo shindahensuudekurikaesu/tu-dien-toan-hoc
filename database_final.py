@@ -75,7 +75,7 @@ tu_dien_chu_de_3 = {
     },
     'Hàm số và Biểu thức Đại số': {
         'Hàm số': {
-            'định nghĩa': r'''Cho tập hợp khác rỗng D \subset \mathbb{R}. Hàm số f xác định trên D là một quy tắc cho tương ứng mỗi số x \in D với duy nhất một số y \in \mathbb{R}.''',
+            'định nghĩa': r"\text{Cho tập hợp khác rỗng } D \subset \mathbb{R}. \text{ Hàm số } f \text{ xác định trên } D \text{ là một quy tắc cho tương ứng mỗi số } x \in D \text{ với duy nhất một số } y \in \mathbb{R}.",
             'kí hiệu': r'''y = f(x), x \in D''',
             'công thức': r'''D \text{ là tập xác định, } x \text{ là biến số, } y \text{ là hàm số.}''',
             'ví dụ': r'''y = \sqrt{x-1} \text{ có TXĐ } D = [1; +\infty).''',
@@ -89,7 +89,7 @@ tu_dien_chu_de_3 = {
             'hình_ve': r'''plot(2*x + 1, (x, -5, 5), title='Ham so dong bien y = 2x + 1')''',
         },
         'Hàm số bậc hai': {
-            'định nghĩa': r'''Hàm số cho bởi công thức y = ax^2 + bx + c (a \neq 0). Đồ thị là một đường Parabol.''',
+            'định nghĩa': r"\displaystyle \text{Hàm số cho bởi công thức } y = ax^2 + bx + c \text{ (với } a \neq 0). \text{ Đồ thị là một đường Parabol.}",
             'kí hiệu': r'''P: y = ax^2 + bx + c''',
             'công thức': r'''\text{Đỉnh } I\left(-\frac{b}{2a}; -\frac{\Delta}{4a}\right), \text{ trục đối xứng } x = -\frac{b}{2a}.''',
             'ví dụ': r'''y = x^2 - 2x + 3 \text{ có đỉnh } I(1; 2).''',
@@ -103,14 +103,14 @@ tu_dien_chu_de_3 = {
             'hình_ve': r'''plot(x**2, -x**2, (x, -3, 3), title='Be lom cua Parabol (a>0 va a<0)')''',
         },
         'Dấu của tam thức bậc hai': {
-            'định nghĩa': r'''Xét dấu của biểu thức f(x) = ax^2 + bx + c dựa vào dấu của a và biệt thức \Delta.''',
+            'định nghĩa': r"\displaystyle \text{Xét dấu của biểu thức } f(x) = ax^2 + bx + c \text{ dựa vào dấu của } a \text{ và biệt thức } \Delta.",
             'kí hiệu': r'''f(x) \text{ cùng dấu với } a \text{ khi } \Delta < 0.''',
             'công thức': r'''\Delta < 0 \Rightarrow a \cdot f(x) > 0, \forall x \in \mathbb{R}.''',
             'ví dụ': r'''x^2 - 4x + 5 > 0 \text{ với mọi } x \in \mathbb{R} \text{ vì } \Delta = -4 < 0 \text{ và } a = 1 > 0.''',
             'hình_ve': r'''plot(x**2 - 4*x + 5, (x, -1, 5), title='f(x) luon cung dau voi a khi Delta < 0')''',
         },
         'Bất phương trình bậc hai': {
-            'định nghĩa': r'''Là bất phương trình dạng ax^2 + bx + c > 0 (hoặc <, \le, \ge).''',
+            'định nghĩa': r"\displaystyle \text{Là bất phương trình có dạng } ax^2 + bx + c > 0 \text{ (hoặc } < 0, \le 0, \ge 0) \text{ với } a \neq 0.",
             'kí hiệu': r'''ax^2 + bx + c \ge 0''',
             'công thức': r'''\text{Nghiệm dựa trên bảng xét dấu của tam thức bậc hai.}''',
             'ví dụ': r'''x^2 - 3x + 2 < 0 \Leftrightarrow x \in (1; 2).''',
@@ -124,14 +124,14 @@ tu_dien_chu_de_3 = {
             'hình_ve': r'''plot(x**2, x**3, (x, 0, 2), title='Cac ham luy thua co ban')''',
         },
         'Lôgarit': {
-            'định nghĩa': r'''Lôgarit cơ số a của b là số mũ alpha sao cho a mũ alpha bằng b.''',
+            'định nghĩa': r"\displaystyle \text{Hàm số có dạng } y = \log_a x \text{ với cơ số } a > 0 \text{ và } a \neq 1.",
             'kí hiệu': r'''\log_a b = \alpha \Leftrightarrow a^\alpha = b \text{ (với } 0 < a \neq 1, b > 0 \text{)}''',
             'công thức': ['\\log_a (MN) = \\log_a M + \\log_a N', '\\log_a (\\frac{M}{N}) = \\log_a M - \\log_a N', '\\log_a M^\\alpha = \\alpha \\log_a M', '\\log_a b = \\frac{\\log_c b}{\\log_c a} \\text{ (Đổi cơ số)}'],
             'ví dụ': r'''\log_2 8 = 3 \text{ vì } 2^3 = 8.''',
             'hình_ve': r'''plot(sp.log(x, 2), (x, 0.1, 5), title='Do thi ham so Logarit')''',
         },
         'Hàm số mũ': {
-            'định nghĩa': r'''Hàm số có dạng y = a^x với cơ số a dương và khác 1.''',
+            'định nghĩa': r"\displaystyle \text{Hàm số có dạng } y = a^x \text{ với cơ số } a > 0 \text{ và } a \neq 1.",
             'kí hiệu': r'''y = a^x''',
             'tính_chất': r'''\text{Nếu } a > 1 \text{ hàm đồng biến; nếu } 0 < a < 1 \text{ hàm nghịch biến. Luôn đi qua (0;1).}''',
             'ví dụ': r'''y = 2^x \text{ tăng trưởng rất nhanh khi x tăng.}''',
