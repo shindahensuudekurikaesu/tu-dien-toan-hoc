@@ -147,7 +147,7 @@ tu_dien_chu_de_3 = {
         'Phương trình mũ và lôgarit cơ bản': {
             'định nghĩa': r'''Giải phương trình tìm x nằm ở vị trí số mũ hoặc trong biểu thức lôgarit.''',
             'kí hiệu': r'''a^x = b; \log_a x = b''',
-            'công thức': ['a^x = b \\Leftrightarrow x = \\log_a b \\text{ (với b > 0)}', '\\log_a x = b \\Leftrightarrow x = a^b'],
+            'công thức': r'a^x = b \\Leftrightarrow x = \\log_a b \\text{ (với b > 0)}', '\\log_a x = b \\Leftrightarrow x = a^b'r,
             'ví dụ': r'''2^x = 5 \Leftrightarrow x = \log_2 5.''',
             'hình_ve': r'''plot(2**x, 5, (x, 0, 3), title='Giao diem la nghiem cua phuong trinh')''',
         },
