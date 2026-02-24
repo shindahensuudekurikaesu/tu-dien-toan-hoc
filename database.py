@@ -154,7 +154,7 @@ chuong_3_toan_10 = {
 }
 
 chuong_4_toan_10 = {
-    "Giá trị lượng giác của một góc (0° - 180°)": {
+    "Giá trị lượng giác của một góc": {
         "định nghĩa": r"Tọa độ của điểm M(x, y) trên nửa đường tròn đơn vị ứng với góc alpha.",
         "kí hiệu": r"\sin \alpha = y_M, \cos \alpha = x_M, \tan \alpha = \frac{y_M}{x_M}, \cot \alpha = \frac{x_M}{y_M}",
         "công thức": r"\tan \alpha = \frac{\sin \alpha}{\cos \alpha} (\alpha \neq 90^\circ), \cot \alpha = \frac{\cos \alpha}{\sin \alpha} (\alpha \neq 0^\circ, 180^\circ)",
@@ -244,28 +244,28 @@ chuong_5_toan_10 = {
 }
 
 chuong_6_toan_10 = {
-    "Số trung bình (Mean)": {
+    "Số trung bình": {
         "định nghĩa": r"Giá trị trung bình cộng của các số liệu, dùng để đại diện cho xu thế trung tâm của mẫu số liệu.",
         "kí hiệu": r"\bar{x}",
         "công thức": r"\bar{x} = \frac{x_1 + x_2 + ... + x_n}{n} = \frac{\sum_{i=1}^{k} n_i x_i}{N}",
         "ví dụ": r"\text{Mẫu: } \{5, 7, 9\} \Rightarrow \bar{x} = 7",
         "hình_ve": "sp.plotting.plot(sp.Piecewise((0, x < 7), (1, x == 7), (0, x > 7)), (x, 4, 10), title='Diem trung binh tai x=7')"
     },
-    "Trung vị (Median)": {
+    "Trung vị": {
         "định nghĩa": r"Số đứng ở vị trí giữa của mẫu số liệu sau khi đã sắp xếp theo thứ tự không giảm.",
         "kí hiệu": r"M_e",
         "công thức": r"\text{Nếu n lẻ: } M_e = x_{\frac{n+1}{2}}. \text{ Nếu n chẵn: } M_e = \frac{1}{2}(x_{\frac{n}{2}} + x_{\frac{n}{2}+1})",
         "ví dụ": r"\text{Mẫu: } \{2, 3, 4, 100\} \Rightarrow M_e = 3.5",
         "hình_ve": "sp.plotting.plot(sp.Piecewise((0, x < 3.5), (2, x == 3.5), (0, x > 3.5)), (x, 0, 10), title='Trung vi tai x=3.5')"
     },
-    "Tứ phân vị (Quartiles)": {
+    "Tứ phân vị": {
         "định nghĩa": r"Ba giá trị chia mẫu số liệu đã sắp xếp thành 4 phần bằng nhau.",
         "kí hiệu": r"Q_1, Q_2, Q_3",
         "công thức": r"Q_2 = M_e; Q_1 = \text{Trung vị nửa dưới}; Q_3 = \text{Trung vị nửa trên}",
         "ví dụ": r"\text{Mẫu: } \{1, 2, 3, 4, 5, 6, 7\} \Rightarrow Q_1=2, Q_2=4, Q_3=6",
         "hình_ve": "sp.plotting.plot(2, 4, 6, (x, 0, 8), title='Cac gia tri Q1, Q2, Q3')"
     },
-    "Mốt (Mode)": {
+    "Mốt": {
         "định nghĩa": r"Giá trị xuất hiện với tần số lớn nhất trong mẫu số liệu.",
         "kí hiệu": r"M_o",
         "công thức": r"\text{Giá trị } x_i \text{ ứng với } n_i = \max \{n_i\}",
@@ -289,14 +289,14 @@ chuong_6_toan_10 = {
 }
 
 chuong_7_duong_thang = {
-    "Vectơ chỉ phương (VTCP)": {
+    "Vectơ chỉ phương": {
         "định nghĩa": r"Vectơ \vec{u} \neq \vec{0} được gọi là VTCP của đường thẳng d nếu giá của nó song song hoặc trùng với d.",
         "kí hiệu": r"\vec{u} = (u_1; u_2)",
         "công thức": r"\text{Nếu } \vec{u} \text{ là VTCP thì } k\vec{u} (k \neq 0) \text{ cũng là VTCP.}",
         "ví dụ": r"\text{Đường thẳng đi qua } A(1; 2), B(3; 5) \text{ có VTCP } \vec{u} = \vec{AB} = (2; 3).",
         "hình_ve": "sp.plotting.plot_parametric((t, 1.5*t, (t, 0, 1)), title='Minh hoa VTCP (u1, u2)')"
     },
-    "Vectơ pháp tuyến (VTPT)": {
+    "Vectơ pháp tuyến": {
         "định nghĩa": r"Vectơ \vec{n} \neq \vec{0} được gọi là VTPT của đường thẳng d nếu giá của nó vuông góc với d.",
         "kí hiệu": r"\vec{n} = (a; b)",
         "công thức": r"\vec{u} \perp \vec{n} \Leftrightarrow a \cdot u_1 + b \cdot u_2 = 0. \text{ Chuyển đổi: } \vec{u}(u_1; u_2) \rightarrow \vec{n}(-u_2; u_1).",
@@ -355,21 +355,21 @@ chuong_7_duong_tron_conic = {
         "ví dụ": r"\text{Tiếp tuyến của } x^2+y^2=5 \text{ tại } (1; 2) \text{ là: } x + 2y - 5 = 0.",
         "hình_ve": "sp.plot_implicit(sp.Or(x**2 + y**2 - 5, x + 2*y - 5), (x, -4, 4), (y, -4, 4), title='Duong tron va tiep tuyen tai (1, 2)')"
     },
-    "Đường Elip (Ellipse)": {
+    "Đường Elip": {
         "định nghĩa": r"Tập hợp các điểm M sao cho MF_1 + MF_2 = 2a.",
         "kí hiệu": r"(E): \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 (a > b > 0)",
         "công thức": r"c^2 = a^2 - b^2; F_1(-c; 0), F_2(c; 0); \text{ Độ dài trục lớn: } 2a, \text{ trục bé: } 2b",
         "ví dụ": r"\frac{x^2}{16} + \frac{y^2}{9} = 1 \Rightarrow a=4, b=3, c=\sqrt{7}.",
         "hình_ve": "sp.plot_implicit(x**2/16 + y**2/9 - 1, (x, -5, 5), (y, -4, 4), title='Duong Elip (E): x^2/16 + y^2/9 = 1')"
     },
-    "Đường Hypebol (Hyperbola)": {
+    "Đường Hypebol": {
         "định nghĩa": r"Tập hợp các điểm M sao cho |MF_1 - MF_2| = 2a.",
         "kí hiệu": r"(H): \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 (a, b > 0)",
         "công thức": r"c^2 = a^2 + b^2; F_1(-c; 0), F_2(c; 0); \text{ Trục thực: } 2a, \text{ trục ảo: } 2b",
         "ví dụ": r"\frac{x^2}{9} - \frac{y^2}{16} = 1 \Rightarrow a=3, b=4, c=5.",
         "hình_ve": "sp.plot_implicit(x**2/9 - y**2/16 - 1, (x, -10, 10), (y, -10, 10), title='Duong Hypebol (H): x^2/9 - y^2/16 = 1')"
     },
-    "Đường Parabol (Parabola)": {
+    "Đường Parabol": {
         "định nghĩa": r"Tập hợp các điểm M cách đều tiêu điểm F và đường chuẩn delta.",
         "kí hiệu": r"(P): y^2 = 2px (p > 0)",
         "công thức": r"F(p/2; 0); \text{ Đường chuẩn: } x = -p/2",
@@ -393,42 +393,42 @@ chuong_8_dai_so_to_hop = {
         "ví dụ": r"\text{Chọn một bộ quần áo gồm 3 áo và 2 quần } \Rightarrow 3 \cdot 2 = 6 \text{ cách.}",
         "hình_ve": "sp.plot_implicit(sp.And(x >= 1, x <= 3, y >= 1, y <= 2), (x, 0, 4), (y, 0, 3), title='Quy tac nhan: To hop m x n')"
     },
-    "Sơ đồ cây (Tree Diagram)": {
+    "Sơ đồ cây": {
         "định nghĩa": r"Công cụ trực quan để liệt kê tất cả các khả năng của một bài toán đếm.",
         "kí hiệu": r"\text{Tree}",
         "công thức": r"\text{Mỗi nhánh đại diện cho một lựa chọn tại một công đoạn.}",
         "ví dụ": r"\text{Liệt kê các kết quả khi tung đồng xu 2 lần liên tiếp.}",
         "hình_ve": "sp.plotting.plot_parametric((t, t, (t, 0, 1)), (t, -t, (t, 0, 1)), title='Mo phong nhanh so do cay')"
     },
-    "Giai thừa (Factorial)": {
+    "Giai thừa": {
         "định nghĩa": r"Tích của n số nguyên dương đầu tiên.",
         "kí hiệu": r"n!",
         "công thức": r"n! = n \cdot (n-1) \cdot \dots \cdot 1; \text{ Quy ước: } 0! = 1",
         "ví dụ": r"5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120",
         "hình_ve": "plot(sp.gamma(x+1), (x, 0, 5), title='Ham Gamma (Giai thua mo rong)')"
     },
-    "Hoán vị (Permutation)": {
+    "Hoán vị": {
         "định nghĩa": r"Sắp xếp n phần tử khác nhau vào n vị trí (có thứ tự).",
         "kí hiệu": r"P_n",
         "công thức": r"P_n = n!",
         "ví dụ": r"\text{Xếp 5 học sinh vào một hàng ngang có } 5! = 120 \text{ cách.}",
         "hình_ve": "sp.plotting.plot(sp.factorial(x), (x, 0, 6), title='Su tang truong cua hoan vi P_n')"
     },
-    "Chỉnh hợp (K-permutation)": {
+    "Chỉnh hợp": {
         "định nghĩa": r"Chọn k phần tử từ n phần tử khác nhau và sắp xếp chúng theo một thứ tự nhất định.",
         "kí hiệu": r"A_n^k",
         "công thức": r"A_n^k = \frac{n!}{(n-k)!} \text{ (với } 1 \le k \le n \text{)}",
         "ví dụ": r"\text{Chọn 3 người làm lớp trưởng, lớp phó, thư ký từ 10 người: } A_{10}^3 = 720.",
         "hình_ve": "sp.plotting.plot(sp.ff(x, 3), (x, 3, 10), title='Chinh hop chap 3 cua n (A_n^3)')"
     },
-    "Tổ hợp (Combination)": {
+    "Tổ hợp": {
         "định nghĩa": r"Chọn k phần tử từ n phần tử khác nhau (không quan tâm thứ tự).",
         "kí hiệu": r"C_n^k \text{ hoặc } \binom{n}{k}",
         "công thức": r"C_n^k = \frac{n!}{k!(n-k)!}",
         "ví dụ": r"\text{Chọn 3 người đi trực nhật từ 10 người: } C_{10}^3 = 120.",
         "hình_ve": "sp.plotting.plot(sp.binomial(x, 3), (x, 3, 10), title='To hop chap 3 cua n (C_n^3)')"
     },
-    "Nhị thức Newton (Binomial Expansion)": {
+    "Nhị thức Newton": {
         "định nghĩa": r"Công thức khai triển biểu thức lũy thừa của một tổng.",
         "kí hiệu": r"(a+b)^n",
         "công thức bậc 4": r"(a+b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4",
@@ -688,7 +688,7 @@ chuong_4_toan_11 = {
         "ví dụ": r"\text{Trong hình chóp có đáy là hình bình hành, các cặp cạnh đối diện của đáy song song với nhau.}",
         "hình_ve": "sp.plotting.plot3d_parametric_line((t, 0, 0), (t, 1, 0), (t, 0, 1))" # Vẽ các đường song song
     },
-    "Thiết diện (Mặt cắt)": {
+    "Thiết diện": {
         "định nghĩa": "Giao của một mặt phẳng với các mặt của một hình khối (hình chóp, hình lăng trụ). Thiết diện là một đa giác.",
         "kí hiệu": r"H = (P) \cap \text{Hình khối}",
         "công thức": r"\text{Tìm các đoạn giao tuyến của mặt phẳng (P) với từng mặt của hình khối cho đến khi khép kín.}",
@@ -783,7 +783,7 @@ chuong_5_toan_11 = {
 }
 
 chuong_6_toan_11 = {
-    "Định nghĩa đạo hàm tại một điểm": {
+    "Đạo hàm tại một điểm": {
         "định nghĩa": "Đạo hàm của hàm số y = f(x) tại điểm x_0 là giới hạn của tỉ số giữa số gia của hàm số và số gia của đối số khi số gia đối số tiến dần về 0.",
         "kí hiệu": r"f'(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}",
         "công thức": r"f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}",
@@ -848,7 +848,7 @@ chuong_7_toan_11 = {
         "ví dụ": r"8^{\frac{2}{3}} = \sqrt[3]{8^2} = \sqrt[3]{64} = 4.",
         "hình_ve": "plot(x**2, x**3, (x, 0, 2), title='Cac ham luy thua co ban')"
     },
-    "Khái niệm Lôgarit": {
+    "Lôgarit": {
         "định nghĩa": "Lôgarit cơ số a của b là số mũ alpha sao cho a mũ alpha bằng b.",
         "kí hiệu": r"\log_a b = \alpha \Leftrightarrow a^\alpha = b \text{ (với } 0 < a \neq 1, b > 0 \text{)}",
         "công thức": [
@@ -961,3 +961,4 @@ chuong_9_toan_11 = {
         "hình_ve": "plot(sp.Heaviside(x-0.5), (x, 0, 1), title='Mo phong phan nhanh xac suat')"
     }
 }
+
