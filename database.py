@@ -1,5 +1,3 @@
-from IPython.display import display, Math
-
 chuong_1_toan_10 = {
     "Mệnh đề toán học": {
         "định nghĩa": r"Là một câu khẳng định có tính đúng hoặc sai rõ ràng. Một mệnh đề không thể vừa đúng vừa sai.",
@@ -77,138 +75,171 @@ chuong_1_toan_10 = {
 
 chuong_2_toan_10 = {
     "Bất phương trình bậc nhất hai ẩn": {
-        "định nghĩa": "Là bất phương trình có dạng tổng quát với hai biến x, y.",
-        "kí hiệu": "f(x, y) < 0",
-        "công thức": r"ax + by + c < 0 \quad (a^2 + b^2 \neq 0)",
-        "ví dụ": r"2x - y + 3 \ge 0"
+        "định nghĩa": r"Là bất phương trình có dạng ax + by < c (hoặc >, <=, >=), trong đó a, b không đồng thời bằng 0.",
+        "kí hiệu": r"ax + by \le c",
+        "công thức": r"a, b, c \in \mathbb{R}, a^2 + b^2 \neq 0",
+        "ví dụ": r"2x + 3y > 6 \text{ là một bất phương trình bậc nhất hai ẩn.}"
     },
-    "Miền nghiệm của BPT": {
-        "định nghĩa": "Tập hợp các cặp số (x; y) thỏa mãn bất phương trình. Hình học là một nửa mặt phẳng được chia bởi đường thẳng d.",
-        "kí hiệu": r"\mathcal{D}",
-        "công thức": r"d: ax + by + c = 0",
-        "ví dụ": r"\text{Xét } O(0;0) \text{ để xác định miền nghiệm của } x + y - 2 < 0."
+    "Miền nghiệm của bất phương trình": {
+        "định nghĩa": r"Tập hợp các cặp số (x; y) làm cho bất phương trình đúng. Trên mặt phẳng tọa độ, miền nghiệm thường là một nửa mặt phẳng.",
+        "kí hiệu": r"S = \{(x, y) \in \mathbb{R}^2 \mid ax + by < c\}",
+        "công thức": r"\text{Cách xác định: Vẽ đường thẳng } d: ax + by = c, \text{ thử một điểm } M \notin d.",
+        "ví dụ": r"\text{Miền nghiệm của } x + y < 1 \text{ là nửa mặt phẳng chứa gốc tọa độ } O(0;0) \text{ bỏ biên.}",
+        "hình_ve": "sp.plot_implicit(x + y < 1, (x, -2, 2), (y, -2, 2), title='Mien nghiem: x + y < 1')""
     },
     "Hệ bất phương trình bậc nhất hai ẩn": {
-        "định nghĩa": "Tập hợp gồm từ hai bất phương trình bậc nhất hai ẩn trở lên.",
-        "kí hiệu": r"\begin{cases} f_i(x,y) \ge 0 \end{cases}",
-        "công thức": r"\begin{cases} a_1x + b_1y \le c_1 \\ a_2x + b_2y \le c_2 \end{cases}",
-        "ví dụ": r"\begin{cases} x \ge 0 \\ y \ge 0 \\ x + y \le 1 \end{cases}"
+        "định nghĩa": r"Gồm hai hay nhiều bất phương trình bậc nhất hai ẩn được xét đồng thời.",
+        "kí hiệu": r"\begin{cases} a_1x + b_1y \le c_1 \\ a_2x + b_2y \le c_2 \end{cases}",
+        "công thức": r"\text{Miền nghiệm là giao của các miền nghiệm của từng bất phương trình trong hệ.}",
+        "ví dụ": r"\text{Hệ: } \{x \ge 0, y \ge 0, x + y \le 2\}"
     },
-    "Miền nghiệm của hệ BPT": {
-        "định nghĩa": "Giao của các miền nghiệm của các bất phương trình trong hệ. Thường là miền đa giác (lồi).",
-        "kí hiệu": r"\mathcal{S} = \bigcap \mathcal{D}_i",
-        "công thức": r"\text{Đa giác bao gồm cả biên hoặc không biên.}",
-        "ví dụ": r"\text{Miền nghiệm hệ } \{x \ge 0, y \ge 0, x+y \le 1\} \text{ là tam giác } OAB."
+    "Miền nghiệm của hệ (Đa giác nghiệm)": {
+        "định nghĩa": r"Miền nghiệm của hệ thường là một miền đa giác (có thể không giới hạn) trên mặt phẳng tọa độ.",
+        "kí hiệu": r"\text{Miền đa giác } ABCD",
+        "công thức": r"\text{Các đỉnh của đa giác là giao điểm của các đường thẳng biên.}",
+        "ví dụ": r"\text{Hệ } \{x \ge 0, y \ge 0, x+y \le 1\} \text{ có miền nghiệm là tam giác vuông OAB.}"
     },
-    "Bài toán tối ưu hóa (Quy hoạch tuyến tính)": {
-        "định nghĩa": "Tìm giá trị lớn nhất hoặc nhỏ nhất của biểu thức bậc nhất trên một miền nghiệm cho trước.",
-        "kí hiệu": r"F(x, y) = ax + by",
-        "công thức": r"\min/\max F(x, y) \text{ thường đạt được tại các đỉnh của đa giác miền nghiệm.}",
-        "ví dụ": r"\text{Tìm max } F(x, y) = x + 2y \text{ với } (x, y) \in \text{ miền đa giác.}"
+    "Bài toán tối ưu (Quy hoạch tuyến tính)": {
+        "định nghĩa": r"Tìm giá trị lớn nhất hoặc nhỏ nhất của biểu thức F = ax + by trên một miền nghiệm cho trước.",
+        "kí hiệu": r"F(x; y) = ax + by",
+        "công thức": r"\text{Giá trị tối ưu luôn đạt được tại một trong các đỉnh của đa giác miền nghiệm.}",
+        "ví dụ": r"\text{Tìm max } F = 2x + 3y \text{ với } (x; y) \in \text{ miền tam giác } O(0;0), A(1;0), B(0;1).",
+        "hình_ve": "sp.plot_implicit(sp.And(x >= 0, y >= 0, x + y <= 1), (x, -0.5, 1.5), (y, -0.5, 1.5), title='Da giac nghiem (Tam giac OAB)')"
     }
 }
 
 chuong_3_toan_10 = {
+    "Hàm số": {
+        "định nghĩa": r"Cho tập hợp khác rỗng D \subset \mathbb{R}. Hàm số f xác định trên D là một quy tắc cho tương ứng mỗi số x \in D với duy nhất một số y \in \mathbb{R}.",
+        "kí hiệu": r"y = f(x), x \in D",
+        "công thức": r"D \text{ là tập xác định, } x \text{ là biến số, } y \text{ là hàm số.}",
+        "ví dụ": r"y = \sqrt{x-1} \text{ có TXĐ } D = [1; +\infty).",
+        "hình_ve": "plot(sp.sqrt(x-1), (x, 1, 10), title='Do thi ham so y = sqrt(x-1)')"
+    },
+    "Sự biến thiên của hàm số": {
+        "định nghĩa": r"Hàm số đồng biến (tăng) nếu x tăng thì y tăng. Hàm số nghịch biến (giảm) nếu x tăng thì y giảm.",
+        "kí hiệu": r"x_1 < x_2 \Rightarrow f(x_1) < f(x_2) \text{ (đồng biến)}",
+        "công thức": r"\frac{f(x_2) - f(x_1)}{x_2 - x_1} > 0 \Rightarrow \text{Hàm số đồng biến.}",
+        "ví dụ": r"y = 2x + 1 \text{ đồng biến trên } \mathbb{R} \text{ vì } a = 2 > 0.",
+        "hình_ve": "plot(2*x + 1, (x, -5, 5), title='Ham so dong bien y = 2x + 1')"
+    },
     "Hàm số bậc hai": {
-        "định nghĩa": r"Hàm số cho bởi công thức bậc hai của biến số x.",
-        "kí hiệu": r"y = f(x)",
-        "công thức": r"y = ax^2 + bx + c \quad (a \neq 0)",
-        "ví dụ": r"y = x^2 - 4x + 3"
+        "định nghĩa": r"Hàm số cho bởi công thức y = ax^2 + bx + c (a \neq 0). Đồ thị là một đường Parabol.",
+        "kí hiệu": r"P: y = ax^2 + bx + c",
+        "công thức": r"\text{Đỉnh } I\left(-\frac{b}{2a}; -\frac{\Delta}{4a}\right), \text{ trục đối xứng } x = -\frac{b}{2a}.",
+        "ví dụ": r"y = x^2 - 2x + 3 \text{ có đỉnh } I(1; 2).",
+        "hình_ve": "plot(x**2 - 2*x + 3, (x, -2, 4), title='Parabol y = x^2 - 2x + 3')"
     },
-    "Đồ thị hàm số bậc hai (Parabol)": {
-        "định nghĩa": r"Đường cong Parabol có đỉnh I, đối xứng qua đường thẳng x.",
-        "kí hiệu": r"P",
-        "công thức": r"\text{Đỉnh } I\left(-\frac{b}{2a}; -\frac{\Delta}{4a}\right), \text{ Trục đối xứng } x = -\frac{b}{2a}",
-        "ví dụ": r"\text{Với } y = x^2 - 2x, \text{ đỉnh là } I(1; -1)."
-    },
-    "Sự biến thiên": {
-        "định nghĩa": r"Sự tăng giảm của hàm số trên các khoảng dựa vào dấu của hệ số a.",
-        "kí hiệu": r"a > 0 \text{ hoặc } a < 0",
-        "công thức": r"a > 0: \text{ NB trên } (-\infty; -\frac{b}{2a}), \text{ ĐB trên } (-\frac{b}{2a}; +\infty)",
-        "ví dụ": r"a = 1 > 0: \text{ Hàm số đạt cực tiểu tại đỉnh.}"
-    },
-    "Tam thức bậc hai": {
-        "định nghĩa": r"Biểu thức đại số bậc hai theo biến x.",
-        "kí hiệu": r"f(x) = ax^2 + bx + c",
+    "Đồ thị hàm số bậc hai": {
+        "định nghĩa": r"Bề lõm hướng lên trên nếu a > 0, hướng xuống dưới nếu a < 0.",
+        "kí hiệu": r"a > 0 \cup, a < 0 \cap",
         "công thức": r"\Delta = b^2 - 4ac",
-        "ví dụ": r"f(x) = x^2 - 3x + 2 \text{ có } \Delta = (-3)^2 - 4(1)(2) = 1"
+        "ví dụ": r"y = -x^2 \text{ có bề lõm quay xuống dưới và đỉnh là gốc tọa độ } O(0;0).",
+        "hình_ve": "plot(x**2, -x**2, (x, -3, 3), title='Be lom cua Parabol (a>0 va a<0)')"
     },
-    "Định lý về dấu của tam thức bậc hai": {
-        "định nghĩa": r"Quy tắc xác định giá trị âm, dương của tam thức dựa vào biệt thức và hệ số a.",
-        "kí hiệu": r"f(x) \gtrless 0",
-        "công thức": r"\Delta < 0 \Rightarrow f(x) \text{ cùng dấu với } a, \forall x \in \mathbb{R}",
-        "ví dụ": r"x^2 + x + 1 > 0, \forall x \in \mathbb{R} \text{ vì } \Delta = -3 < 0, a = 1 > 0."
+    "Dấu của tam thức bậc hai": {
+        "định nghĩa": r"Xét dấu của biểu thức f(x) = ax^2 + bx + c dựa vào dấu của a và biệt thức \Delta.",
+        "kí hiệu": r"f(x) \text{ cùng dấu với } a \text{ khi } \Delta < 0.",
+        "công thức": r"\Delta < 0 \Rightarrow a \cdot f(x) > 0, \forall x \in \mathbb{R}.",
+        "ví dụ": r"x^2 - 4x + 5 > 0 \text{ với mọi } x \in \mathbb{R} \text{ vì } \Delta = -4 < 0 \text{ và } a = 1 > 0.",
+        "hình_ve": "plot(x**2 - 4*x + 5, (x, -1, 5), title='f(x) luon cung dau voi a khi Delta < 0')"
+    },
+    "Bất phương trình bậc hai": {
+        "định nghĩa": r"Là bất phương trình dạng ax^2 + bx + c > 0 (hoặc <, \le, \ge).",
+        "kí hiệu": r"ax^2 + bx + c \ge 0",
+        "công thức": r"\text{Nghiệm dựa trên bảng xét dấu của tam thức bậc hai.}",
+        "ví dụ": r"x^2 - 3x + 2 < 0 \Leftrightarrow x \in (1; 2).",
+        "hình_ve": "sp.plot_implicit(x**2 - 3*x + 2 < 0, (x, -1, 4), (y, -1, 1), title='Mien nghiem x^2 - 3x + 2 < 0')"
     }
 }
 
 chuong_4_toan_10 = {
-    "Giá trị lượng giác của một góc từ 0 đến 180 độ": {
-        "định nghĩa": r"Mở rộng khái niệm lượng giác cho góc tù bằng nửa đường tròn đơn vị.",
-        "kí hiệu": r"\sin \alpha, \cos \alpha, \tan \alpha, \cot \alpha",
-        "công thức": r"\sin(180^\circ - \alpha) = \sin \alpha, \cos(180^\circ - \alpha) = -\cos \alpha",
-        "ví dụ": r"\sin 150^\circ = \sin 30^\circ = \frac{1}{2}"
+    "Giá trị lượng giác của một góc (0° - 180°)": {
+        "định nghĩa": r"Tọa độ của điểm M(x, y) trên nửa đường tròn đơn vị ứng với góc alpha.",
+        "kí hiệu": r"\sin \alpha = y_M, \cos \alpha = x_M, \tan \alpha = \frac{y_M}{x_M}, \cot \alpha = \frac{x_M}{y_M}",
+        "công thức": r"\tan \alpha = \frac{\sin \alpha}{\cos \alpha} (\alpha \neq 90^\circ), \cot \alpha = \frac{\cos \alpha}{\sin \alpha} (\alpha \neq 0^\circ, 180^\circ)",
+        "ví dụ": r"\text{Với } \alpha = 90^\circ \Rightarrow M(0, 1) \Rightarrow \sin 90^\circ = 1, \cos 90^\circ = 0.",
+        "hình_ve": "sp.plot_implicit(sp.And(x**2 + y**2 <= 1, y >= 0), (x, -1.5, 1.5), (y, -0.5, 1.5), title='Nua duong tron don vi')"
     },
-    "Định lý Cosin": {
-        "định nghĩa": r"Mối liên hệ giữa ba cạnh và cosin của một góc trong tam giác bất kỳ.",
-        "kí hiệu": r"a, b, c, \cos A",
-        "công thức": r"a^2 = b^2 + c^2 - 2bc \cdot \cos A",
-        "ví dụ": r"\text{Tam giác có } b=3, c=4, \hat{A}=60^\circ \Rightarrow a^2 = 3^2+4^2-2 \cdot 3 \cdot 4 \cdot \frac{1}{2} = 13"
+    "Bảng dấu và Tính chất đặc biệt": {
+        "định nghĩa": r"Dấu của các giá trị lượng giác phụ thuộc vào góc alpha là nhọn hay tù.",
+        "kí hiệu": r"\text{Góc nhọn (0, 90): All (+); Góc tù (90, 180): Sin (+), còn lại (-).}",
+        "công thức": r"\sin(180^\circ - \alpha) = \sin \alpha, \cos(180^\circ - \alpha) = -\cos \alpha, \tan(180^\circ - \alpha) = -\tan \alpha",
+        "ví dụ": r"\cos 120^\circ = -\cos(180^\circ - 120^\circ) = -\cos 60^\circ = -0.5",
+        "hình_ve": "plot(sp.sin(x*sp.pi/180), (x, 0, 180), title='Do thi ham Sin tu 0 den 180 do')"
     },
-    "Định lý Sin": {
-        "định nghĩa": r"Tỉ số giữa mỗi cạnh và sin của góc đối diện bằng đường kính đường tròn ngoại tiếp.",
-        "kí hiệu": r"R \text{ (bán kính đường tròn ngoại tiếp)}",
-        "công thức": r"\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R",
-        "ví dụ": r"\text{Tam giác có } a=10, \hat{A}=30^\circ \Rightarrow R = \frac{10}{2 \cdot \sin 30^\circ} = 10"
+    "Các hệ thức lượng giác cơ bản": {
+        "định nghĩa": r"Các đẳng thức liên hệ giữa sin, cos, tan, cot của cùng một góc alpha.",
+        "kí hiệu": r"\sin^2 \alpha + \cos^2 \alpha = 1",
+        "công thức": r"1 + \tan^2 \alpha = \frac{1}{\cos^2 \alpha}; 1 + \cot^2 \alpha = \frac{1}{\sin^2 \alpha}; \tan \alpha \cdot \cot \alpha = 1",
+        "ví dụ": r"\text{Biết } \sin \alpha = 0.6, 0 < \alpha < 90^\circ \Rightarrow \cos \alpha = \sqrt{1 - 0.6^2} = 0.8",
+        "hình_ve": "plot(sp.sin(x)**2 + sp.cos(x)**2, (x, -5, 5), title='Tong binh phuong Sin va Cos luon bang 1')"
     },
-    "Các công thức tính diện tích tam giác": {
-        "định nghĩa": r"Các cách tính diện tích dựa trên cạnh, góc và bán kính đường tròn nội/ngoại tiếp.",
-        "kí hiệu": r"S, p \text{ (nửa chu vi)}, r \text{ (bán kính nội tiếp)}",
-        "công thức": r"S = \frac{1}{2}bc\sin A = \frac{abc}{4R} = pr = \sqrt{p(p-a)(p-b)(p-c)}",
-        "ví dụ": r"\text{Tam giác } 3, 4, 5 \text{ có } p=6 \Rightarrow S = \sqrt{6(6-3)(6-4)(6-5)} = 6"
+    "Định lí Côsin và Hệ quả": {
+        "định nghĩa": r"Tính cạnh khi biết 2 cạnh và góc xen giữa, hoặc tính góc khi biết 3 cạnh.",
+        "kí hiệu": r"a^2 = b^2 + c^2 - 2bc \cos A",
+        "công thức": r"\cos A = \frac{b^2 + c^2 - a^2}{2bc}; m_a^2 = \frac{2(b^2 + c^2) - a^2}{4} \text{ (Đường trung tuyến)}",
+        "ví dụ": r"\text{Tam giác đều cạnh a } \Rightarrow m_a = \sqrt{\frac{2(a^2 + a^2) - a^2}{4}} = \frac{a\sqrt{3}}{2}",
+        "hình_ve": "plot(sp.Piecewise((x*sp.sqrt(3), sp.And(x>=0, x<=0.5)), (sp.sqrt(3)*(1-x), sp.And(x>0.5, x<=1))), (x, -0.5, 1.5), title='Minh hoa tam giac deu')"
     },
-    "Giải tam giác và ứng dụng thực tế": {
-        "định nghĩa": r"Tìm các yếu tố chưa biết của tam giác khi đã biết một số yếu tố cho trước.",
-        "kí hiệu": r"\text{Giải tam giác}",
-        "công thức": r"\text{Sử dụng linh hoạt định lý Sin, Cos và tổng 3 góc } = 180^\circ",
-        "ví dụ": r"\text{Biết 3 cạnh, dùng định lý Cosin để tìm các góc.}"
+    "Định lí Sin": {
+        "định nghĩa": r"Mối quan hệ giữa cạnh, góc đối diện và bán kính đường tròn ngoại tiếp R.",
+        "kí hiệu": r"\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R",
+        "công thức": r"R = \frac{a}{2 \sin A}; a = 2R \sin A",
+        "ví dụ": r"\text{Trong tam giác vuông tại A, } \frac{a}{\sin 90^\circ} = 2R \Rightarrow a = 2R \text{ (Cạnh huyền là đường kính).}",
+        "hình_ve": "sp.plot_implicit(x**2 + y**2 - 1, (x, -1.2, 1.2), (y, -1.2, 1.2), title='Duong tron ngoai tiep ban kinh R=1')"
+    },
+    "5 Công thức tính diện tích tam giác": {
+        "định nghĩa": r"Các biến thể tính diện tích (S) tùy theo dữ kiện đầu bài.",
+        "kí hiệu": r"S, p, R, r, h_a",
+        "công thức": r"1. S = \frac{1}{2}ah_a; 2. S = \frac{1}{2}bc\sin A; 3. S = \frac{abc}{4R}; 4. S = pr; 5. S = \sqrt{p(p-a)(p-b)(p-c)}",
+        "ví dụ": r"\text{Tam giác có } a=13, b=14, c=15 \Rightarrow p=21, S=84.",
+        "hình_ve": "sp.plot_implicit(sp.And(y > 0, y < 1 - sp.abs(x)), (x, -1, 1), (y, -0.1, 1.2), title='Mien dien tich tam giac')"
     }
 }
 
 chuong_5_toan_10 = {
-    "Khái niệm Vectơ": {
-        "định nghĩa": r"Đoạn thẳng có hướng, nghĩa là đã chỉ rõ điểm đầu và điểm cuối.",
-        "kí hiệu": r"\vec{a}, \vec{AB}, \vec{0}",
-        "công thức": r"|\vec{AB}| = \text{độ dài đoạn thẳng AB}",
-        "ví dụ": r"\vec{AB} \text{ có điểm đầu A, điểm cuối B.}",
-        "hình": "plt.quiver(0, 0, 3, 2, angles='xy', scale_units='xy', scale=1, color='r'); plt.text(1.5, 1.2, r'\\vec{a}'); plt.xlim(-1, 4); plt.ylim(-1, 3); plt.grid(); plt.show()"
+    "Vectơ": {
+        "định nghĩa": r"Vectơ là một đoạn thẳng có hướng. Điểm bắt đầu gọi là điểm đầu, điểm kết thúc gọi là điểm cuối.",
+        "kí hiệu": r"\vec{a}, \vec{AB}, \vec{0} \text{ (vectơ không)}",
+        "công thức": r"|\vec{AB}| = AB \text{ (độ dài vectơ là khoảng cách giữa hai điểm)}",
+        "ví dụ": r"\vec{0} \text{ có độ dài bằng 0, hướng tùy ý.}",
+        "hình_ve": "sp.plotting.plot_parametric(t, t, (t, 0, 1), title='Minh hoa vecto tu (0,0) den (1,1)')"
     },
-    "Tổng và hiệu của hai vectơ": {
-        "định nghĩa": r"Phép toán cộng hai vectơ theo quy tắc ba điểm hoặc quy tắc hình bình hành.",
+    "Vectơ cùng phương, cùng hướng": {
+        "định nghĩa": r"Hai vectơ cùng nằm trên một đường thẳng hoặc hai đường thẳng song song thì cùng phương. Nếu cùng phương, chúng có thể cùng hướng hoặc ngược hướng.",
+        "kí hiệu": r"\vec{a} \parallel \vec{b}",
+        "công thức": r"\vec{a} = k\vec{b} \text{ (điều kiện để hai vectơ cùng phương)}",
+        "ví dụ": r"\text{Trong hình bình hành ABCD, } \vec{AB} \text{ và } \vec{DC} \text{ cùng hướng.}",
+        "hình_ve": "sp.plotting.plot_parametric((t, 1, (t, 0, 1)), (t, 2, (t, 0, 1)), title='Hai vecto cung phuong')"
+    },
+    "Tổng và Hiệu của hai vectơ": {
+        "định nghĩa": r"Quy tắc cộng (nối đuôi) và quy tắc trừ (chung gốc).",
         "kí hiệu": r"\vec{a} + \vec{b}, \vec{a} - \vec{b}",
-        "công thức": r"\vec{AB} + \vec{BC} = \vec{AC}; \quad \vec{OA} + \vec{OB} = \vec{OC} \text{ (C là đỉnh HBH)}",
-        "ví dụ": r"\vec{u} = (1; 2), \vec{v} = (2; 1) \Rightarrow \vec{u} + \vec{v} = (3; 3)",
-        "hình": "plt.quiver([0, 3, 0], [0, 2, 0], [3, 1, 4], [2, 1, 3], angles='xy', scale_units='xy', scale=1, color=['r','b','g']); plt.text(1.5, 1, r'\\vec{a}'); plt.text(3.5, 2.5, r'\\vec{b}'); plt.text(2, 2.5, r'\\vec{a}+\\vec{b}'); plt.xlim(-1, 5); plt.ylim(-1, 4); plt.grid(); plt.show()"
+        "công thức": r"\vec{AB} + \vec{BC} = \vec{AC} \text{ (Quy tắc 3 điểm)}; \vec{AB} - \vec{AC} = \vec{CB}",
+        "ví dụ": r"\text{Quy tắc hình bình hành: } \vec{AB} + \vec{AD} = \vec{AC}",
+        "hình_ve": "sp.plot_implicit(sp.Or(sp.And(y==0, x>=0, x<=2), sp.And(x==0, y>=0, y<=1), sp.And(y==1, x>=0, x<=2), sp.And(x==2, y>=0, y<=1)), (x, -0.5, 2.5), (y, -0.5, 1.5), title='Quy tac hinh binh hanh')"
     },
-    "Tích của một số với một vectơ": {
-        "định nghĩa": r"Kết quả là một vectơ cùng phương với vectơ ban đầu, độ dài gấp |k| lần.",
+    "Tích của vectơ với một số": {
+        "định nghĩa": r"Là một vectơ cùng phương với vectơ ban đầu, độ dài gấp |k| lần.",
         "kí hiệu": r"k\vec{a}",
-        "công thức": r"|k\vec{a}| = |k| \cdot |\vec{a}|",
-        "ví dụ": r"k=2 \Rightarrow 2\vec{a} \text{ cùng hướng và dài gấp đôi } \vec{a}.",
-        "hình": "plt.quiver([0, 0], [1, 0], [1, 2], [0, 0], angles='xy', scale_units='xy', scale=1, color=['r','b']); plt.xlim(-1, 3); plt.ylim(-1, 2); plt.grid(); plt.show()"
+        "công thức": r"|k\vec{a}| = |k| \cdot |\vec{a}|; \text{ G là trọng tâm } \triangle ABC \Leftrightarrow \vec{GA} + \vec{GB} + \vec{GC} = \vec{0}",
+        "ví dụ": r"\text{I là trung điểm AB } \Leftrightarrow \vec{MA} + \vec{MB} = 2\vec{MI} \text{ (với M bất kỳ).}",
+        "hình_ve": "sp.plotting.plot_parametric((t, 0, (t, 0, 1)), (t, 0, (t, 0, 2)), title='Vecto a va vecto 2a')"
     },
-    "Tọa độ của vectơ": {
-        "định nghĩa": r"Biểu diễn vectơ thông qua các vectơ đơn vị trên hệ trục tọa độ Oxy.",
-        "kí hiệu": r"\vec{u} = (x; y)",
-        "công thức": r"\vec{u} = x\vec{i} + y\vec{j}; \quad |\vec{u}| = \sqrt{x^2 + y^2}",
-        "ví dụ": r"A(1; 2), B(4; 6) \Rightarrow \vec{AB} = (3; 4), |\vec{AB}| = 5",
-        "hình": "plt.axhline(0, color='black', lw=1); plt.axvline(0, color='black', lw=1); plt.quiver(0, 0, 3, 4, angles='xy', scale_units='xy', scale=1); plt.xlim(-1, 5); plt.ylim(-1, 5); plt.grid(); plt.show()"
+    "Hệ trục tọa độ Oxy": {
+        "định nghĩa": r"Biểu diễn vectơ thông qua tọa độ trên mặt phẳng.",
+        "kí hiệu": r"\vec{u} = (x; y) \Leftrightarrow \vec{u} = x\vec{i} + y\vec{j}",
+        "công thức": r"A(x_A; y_A), B(x_B; y_B) \Rightarrow \vec{AB} = (x_B - x_A; y_B - y_A)",
+        "ví dụ": r"A(1; 2), B(3; 5) \Rightarrow \vec{AB} = (2; 3)",
+        "hình_ve": "sp.plotting.plot_parametric((t, 2*t, (t, 0, 1)), title='Vecto co toa do (1, 2)')"
     },
     "Tích vô hướng của hai vectơ": {
-        "định nghĩa": r"Một số thực bằng tích độ dài hai vectơ và cosin góc xen giữa.",
+        "định nghĩa": r"Là một con số (không phải vectơ), bằng tích độ dài nhân với cosin góc xen giữa.",
         "kí hiệu": r"\vec{a} \cdot \vec{b}",
         "công thức": r"\vec{a} \cdot \vec{b} = |\vec{a}| \cdot |\vec{b}| \cdot \cos(\vec{a}, \vec{b}) = x_1x_2 + y_1y_2",
-        "ví dụ": r"\vec{a} \perp \vec{b} \Leftrightarrow \vec{a} \cdot \vec{b} = 0",
-        "hình": "plt.quiver([0, 0], [0, 0], [3, 0], [0, 3], angles='xy', scale_units='xy', scale=1); plt.text(1, 0.2, r'\\vec{a}'); plt.text(0.2, 1, r'\\vec{b}'); plt.xlim(-1, 4); plt.ylim(-1, 4); plt.grid(); plt.show()"
+        "ví dụ": r"\vec{a} \perp \vec{b} \Leftrightarrow \vec{a} \cdot \vec{b} = 0 \Leftrightarrow x_1x_2 + y_1y_2 = 0",
+        "hình_ve": "sp.plotting.plot_parametric((t, 0, (t, 0, 1)), (0, t, (t, 0, 1)), title='Hai vecto vuong goc co tich vo huong bang 0')"
     }
 }
 
@@ -217,101 +248,312 @@ chuong_6_toan_10 = {
         "định nghĩa": r"Giá trị trung bình cộng của các số liệu, dùng để đại diện cho xu thế trung tâm của mẫu số liệu.",
         "kí hiệu": r"\bar{x}",
         "công thức": r"\bar{x} = \frac{x_1 + x_2 + ... + x_n}{n} = \frac{\sum_{i=1}^{k} n_i x_i}{N}",
-        "ví dụ": r"\text{Mẫu: } \{5, 7, 9\} \Rightarrow \bar{x} = \frac{5+7+9}{3} = 7",
-        "hình": "plt.figure(figsize=(6,2)); plt.stem([5, 7, 9], [1, 1, 1]); plt.axvline(7, color='r', label='Mean=7'); plt.legend(); plt.title('Vị trí số trung bình'); plt.show()"
+        "ví dụ": r"\text{Mẫu: } \{5, 7, 9\} \Rightarrow \bar{x} = 7",
+        "hình_ve": "sp.plotting.plot(sp.Piecewise((0, x < 7), (1, x == 7), (0, x > 7)), (x, 4, 10), title='Diem trung binh tai x=7')"
     },
     "Trung vị (Median)": {
         "định nghĩa": r"Số đứng ở vị trí giữa của mẫu số liệu sau khi đã sắp xếp theo thứ tự không giảm.",
         "kí hiệu": r"M_e",
         "công thức": r"\text{Nếu n lẻ: } M_e = x_{\frac{n+1}{2}}. \text{ Nếu n chẵn: } M_e = \frac{1}{2}(x_{\frac{n}{2}} + x_{\frac{n}{2}+1})",
-        "ví dụ": r"\text{Mẫu: } \{2, 3, 4, 100\} \Rightarrow M_e = \frac{3+4}{2} = 3.5",
-        "hình": "data=[2, 3, 4, 100]; plt.figure(figsize=(6,1)); plt.scatter(data, [0]*4); plt.axvline(3.5, color='g', label='Median'); plt.legend(); plt.show()"
+        "ví dụ": r"\text{Mẫu: } \{2, 3, 4, 100\} \Rightarrow M_e = 3.5",
+        "hình_ve": "sp.plotting.plot(sp.Piecewise((0, x < 3.5), (2, x == 3.5), (0, x > 3.5)), (x, 0, 10), title='Trung vi tai x=3.5')"
     },
     "Tứ phân vị (Quartiles)": {
-        "định nghĩa": r"Ba giá trị chia mẫu số liệu đã sắp xếp thành 4 phần có số lượng phần tử bằng nhau.",
+        "định nghĩa": r"Ba giá trị chia mẫu số liệu đã sắp xếp thành 4 phần bằng nhau.",
         "kí hiệu": r"Q_1, Q_2, Q_3",
         "công thức": r"Q_2 = M_e; Q_1 = \text{Trung vị nửa dưới}; Q_3 = \text{Trung vị nửa trên}",
         "ví dụ": r"\text{Mẫu: } \{1, 2, 3, 4, 5, 6, 7\} \Rightarrow Q_1=2, Q_2=4, Q_3=6",
-        "hình": "data=[1, 2, 3, 4, 5, 6, 7]; plt.boxplot(data, vert=False, patch_artist=True); plt.title('Biểu đồ hộp (Box plot)'); plt.show()"
+        "hình_ve": "sp.plotting.plot(2, 4, 6, (x, 0, 8), title='Cac gia tri Q1, Q2, Q3')"
     },
     "Mốt (Mode)": {
         "định nghĩa": r"Giá trị xuất hiện với tần số lớn nhất trong mẫu số liệu.",
         "kí hiệu": r"M_o",
-        "công thức": r"\text{Giá trị } x_i \text{ ứng với } n_i = \max \{n_1, n_2, ..., n_k\}",
+        "công thức": r"\text{Giá trị } x_i \text{ ứng với } n_i = \max \{n_i\}",
         "ví dụ": r"\text{Mẫu: } \{1, 2, 2, 3, 3, 3\} \Rightarrow M_o = 3",
-        "hình": "plt.bar(['1', '2', '3'], [1, 2, 3], color='orange'); plt.ylabel('Tần số'); plt.show()"
-    },
-    "Khoảng biến thiên & Khoảng tứ phân vị": {
-        "định nghĩa": r"Đo độ phân tán của mẫu số liệu. Khoảng tứ phân vị giúp loại bỏ các giá trị ngoại lệ.",
-        "kí hiệu": r"R, \Delta_Q",
-        "công thức": r"R = x_{max} - x_{min}; \quad \Delta_Q = Q_3 - Q_1",
-        "ví dụ": r"\text{Mẫu: } \{1, 5, 10\} \Rightarrow R = 10-1 = 9, \Delta_Q = 7.5 - 2.5 = 5",
-        "hình": "data=[1, 2, 5, 8, 10]; plt.hlines(1, 1, 10, colors='r', label='Range'); plt.boxplot(data, vert=False); plt.legend(); plt.show()"
+        "hình_ve": "sp.plotting.plot(sp.Piecewise((1, sp.And(x>0.9, x<1.1)), (2, sp.And(x>1.9, x<2.1)), (3, sp.And(x>2.9, x<3.1)), (0, True)), (x, 0, 4), title='Mo phong bieu do cot (Mode=3)')"
     },
     "Phương sai & Độ lệch chuẩn": {
         "định nghĩa": r"Số đặc trưng đo mức độ phân tán của các số liệu quanh số trung bình.",
         "kí hiệu": r"s^2, s",
-        "công thức": r"s^2 = \frac{1}{n} \sum (x_i - \bar{x})^2; \quad s = \sqrt{s^2}",
-        "ví dụ": r"\text{Số liệu càng tập trung quanh } \bar{x} \text{ thì } s \text{ càng nhỏ.}",
-        "hình": "x=np.linspace(0,20,100); plt.plot(x, 1/2*np.exp(-(x-10)**2/8), label='s nhỏ'); plt.plot(x, 1/5*np.exp(-(x-10)**2/50), label='s lớn'); plt.legend(); plt.title('Phân phối và Độ lệch chuẩn'); plt.show()"
+        "công thức": r"s = \sqrt{\frac{1}{n} \sum (x_i - \bar{x})^2}",
+        "ví dụ": r"\text{Độ lệch chuẩn càng lớn, dữ liệu càng rời xa số trung bình.}",
+        "hình_ve": "sp.plotting.plot(sp.exp(-(x-10)**2/2), sp.exp(-(x-10)**2/10), (x, 0, 20), title='Do lech chuan nho (cao) va lon (thap)')"
     },
-    "Giá trị ngoại lệ (Outliers)": {
-        "định nghĩa": r"Giá trị nằm quá xa so với phần lớn các giá trị trong mẫu.",
-        "kí hiệu": r"x < Q_1 - 1.5\Delta_Q \text{ hoặc } x > Q_3 + 1.5\Delta_Q",
-        "công thức": r"[Q_1 - 1.5\Delta_Q, Q_3 + 1.5\Delta_Q] \text{ là rào cản chuẩn.}",
-        "ví dụ": r"\text{Mẫu: } \{1, 2, 3, 100\} \Rightarrow 100 \text{ là giá trị ngoại lệ.}",
-        "hình": "data=[1, 2, 3, 4, 25]; plt.boxplot(data, vert=False); plt.text(25, 1.1, 'Outlier'); plt.show()"
+    "Xác suất của biến cố": {
+        "định nghĩa": r"Tỉ số giữa số kết quả thuận lợi và tổng số kết quả có thể xảy ra.",
+        "kí hiệu": r"P(A) = n(A)/n(\Omega)",
+        "công thức": r"0 \le P(A) \le 1",
+        "ví dụ": r"P(A) = 0.5 \text{ nghĩa là khả năng xảy ra là 50%.}",
+        "hình_ve": "sp.plot_implicit(sp.Or(x**2 + y**2 < 1, (x-1)**2 + y**2 < 1), (x, -2, 3), (y, -2, 2), title='Bieu do Venn minh hoa xac suat')"
+    }
+}
+
+chuong_7_duong_thang = {
+    "Vectơ chỉ phương (VTCP)": {
+        "định nghĩa": r"Vectơ \vec{u} \neq \vec{0} được gọi là VTCP của đường thẳng d nếu giá của nó song song hoặc trùng với d.",
+        "kí hiệu": r"\vec{u} = (u_1; u_2)",
+        "công thức": r"\text{Nếu } \vec{u} \text{ là VTCP thì } k\vec{u} (k \neq 0) \text{ cũng là VTCP.}",
+        "ví dụ": r"\text{Đường thẳng đi qua } A(1; 2), B(3; 5) \text{ có VTCP } \vec{u} = \vec{AB} = (2; 3).",
+        "hình_ve": "sp.plotting.plot_parametric((t, 1.5*t, (t, 0, 1)), title='Minh hoa VTCP (u1, u2)')"
     },
-    "Biểu đồ tần số hình cột & đoạn thẳng": {
-        "định nghĩa": r"Trực quan hóa sự phân bố tần số của các giá trị.",
-        "kí hiệu": r"Histogram, Line Graph",
-        "công thức": r"\text{Trục hoành: Giá trị; Trục tung: Tần số/Tần suất}",
-        "ví dụ": r"\text{Dùng để so sánh số lượng giữa các nhóm dữ liệu.}",
-        "hình": "plt.plot([1, 2, 3, 4], [10, 25, 15, 30], marker='o'); plt.title('Biểu đồ đoạn thẳng'); plt.show()"
+    "Vectơ pháp tuyến (VTPT)": {
+        "định nghĩa": r"Vectơ \vec{n} \neq \vec{0} được gọi là VTPT của đường thẳng d nếu giá của nó vuông góc với d.",
+        "kí hiệu": r"\vec{n} = (a; b)",
+        "công thức": r"\vec{u} \perp \vec{n} \Leftrightarrow a \cdot u_1 + b \cdot u_2 = 0. \text{ Chuyển đổi: } \vec{u}(u_1; u_2) \rightarrow \vec{n}(-u_2; u_1).",
+        "ví dụ": r"\text{Đường thẳng có VTCP } \vec{u}(1; -2) \text{ thì có VTPT } \vec{n}(2; 1).",
+        "hình_ve": "sp.plotting.plot_parametric((t, 0.5*t, (t, 0, 1)), (-0.5*t, t, (t, 0, 1)), title='VTCP (xanh) vuong goc VTPT (do)')"
+    },
+    "Phương trình tham số của đường thẳng": {
+        "định nghĩa": r"Lập được khi biết một điểm M_0(x_0; y_0) và một VTCP \vec{u}(u_1; u_2).",
+        "kí hiệu": r"d: \text{ tham số } t",
+        "công thức": r"\begin{cases} x = x_0 + u_1t \\ y = y_0 + u_2t \end{cases} (t \in \mathbb{R})",
+        "ví dụ": r"\text{Đường thẳng qua } M(1; -1) \text{ có VTCP } \vec{u}(2; 3): \begin{cases} x = 1 + 2t \\ y = -1 + 3t \end{cases}",
+        "hình_ve": "sp.plotting.plot_parametric(1 + 2*t, -1 + 3*t, (t, -2, 2), title='Phuong trinh tham so d')"
+    },
+    "Phương trình tổng quát của đường thẳng": {
+        "định nghĩa": r"Lập được khi biết một điểm M_0(x_0; y_0) và một VTPT \vec{n}(a; b).",
+        "kí hiệu": r"ax + by + c = 0",
+        "công thức": r"a(x - x_0) + b(y - y_0) = 0 \Leftrightarrow ax + by + (-(ax_0 + by_0)) = 0",
+        "ví dụ": r"\text{Đường thẳng qua } M(1; 2), VTPT \vec{n}(3; 4) \Rightarrow 3x + 4y - 11 = 0.",
+        "hình_ve": "sp.plotting.plot((11 - 3*x)/4, (x, -5, 5), title='Phuong trinh tong quat 3x + 4y - 11 = 0')"
+    },
+    "Các dạng phương trình đặc biệt": {
+        "định nghĩa": r"Phương trình theo đoạn chắn và phương trình có hệ số góc k.",
+        "kí hiệu": r"\text{Đoạn chắn, Hệ số góc}",
+        "công thức": r"\text{Đoạn chắn: } \frac{x}{a} + \frac{y}{b} = 1; \text{ Hệ số góc: } y = k(x - x_0) + y_0",
+        "ví dụ": r"\text{Đường thẳng cắt Ox tại (2;0), Oy tại (0;3) là: } \frac{x}{2} + \frac{y}{3} = 1.",
+        "hình_ve": "sp.plotting.plot(3*(1 - x/2), (x, -1, 3), title='Phuong trinh doan chan')"
+    },
+    "Vị trí tương đối giữa hai đường thẳng": {
+        "định nghĩa": r"Dựa trên số nghiệm của hệ phương trình hoặc tỉ số các hệ số.",
+        "kí hiệu": r"d_1 \cap d_2, d_1 \parallel d_2, d_1 \equiv d_2, d_1 \perp d_2",
+        "công thức": r"\text{Cắt nhau: } a_1b_2 - a_2b_1 \neq 0; \text{ Vuông góc: } a_1a_2 + b_1b_2 = 0",
+        "ví dụ": r"x + y - 2 = 0 \text{ và } x - y = 0 \text{ cắt nhau tại } (1; 1).",
+        "hình_ve": "sp.plotting.plot(2-x, x, (x, -1, 3), title='Vị tri tuong doi: Cat nhau')"
+    },
+    "Góc và Khoảng cách": {
+        "định nghĩa": r"Góc giữa hai đường thẳng (0 \le \alpha \le 90) và khoảng cách từ điểm đến đường thẳng.",
+        "kí hiệu": r"\cos(d_1, d_2), d(M, \Delta)",
+        "công thức": r"\cos\alpha = \frac{|a_1a_2 + b_1b_2|}{\sqrt{a_1^2+b_1^2}\sqrt{a_2^2+b_2^2}}; d(M, \Delta) = \frac{|ax_0 + by_0 + c|}{\sqrt{a^2 + b^2}}",
+        "ví dụ": r"d(O, \Delta: 3x - 4y + 5 = 0) = 1.",
+        "hình_ve": "sp.plotting.plot((3*x + 5)/4, (x, -2, 2), title='Khoang cach tu O den 3x - 4y + 5 = 0')"
+    }
+}
+
+chuong_7_duong_tron_conic = {
+    "Phương trình đường tròn": {
+        "định nghĩa": r"Đường tròn (C) tâm I(a; b), bán kính R.",
+        "kí hiệu": r"(x-a)^2 + (y-b)^2 = R^2",
+        "công thức": r"x^2 + y^2 - 2ax - 2by + c = 0 \text{ với } c = a^2 + b^2 - R^2 \text{ (ĐK: } a^2 + b^2 - c > 0)",
+        "ví dụ": r"x^2 + y^2 - 4x + 6y - 3 = 0 \Rightarrow I(2; -3), R = 4.",
+        "hình_ve": "sp.plot_implicit((x-2)**2 + (y+3)**2 - 16, (x, -3, 7), (y, -8, 2), title='Duong tron tam I(2, -3) ban kinh R=4')"
+    },
+    "Phương trình tiếp tuyến của đường tròn": {
+        "định nghĩa": r"Tiếp tuyến d tại điểm M_0(x_0; y_0) thuộc đường tròn.",
+        "kí hiệu": r"d \text{ tiếp xúc } (C)",
+        "công thức": r"(x_0 - a)(x - x_0) + (y_0 - b)(y - y_0) = 0 \text{ hoặc } d(I, d) = R",
+        "ví dụ": r"\text{Tiếp tuyến của } x^2+y^2=5 \text{ tại } (1; 2) \text{ là: } x + 2y - 5 = 0.",
+        "hình_ve": "sp.plot_implicit(sp.Or(x**2 + y**2 - 5, x + 2*y - 5), (x, -4, 4), (y, -4, 4), title='Duong tron va tiep tuyen tai (1, 2)')"
+    },
+    "Đường Elip (Ellipse)": {
+        "định nghĩa": r"Tập hợp các điểm M sao cho MF_1 + MF_2 = 2a.",
+        "kí hiệu": r"(E): \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 (a > b > 0)",
+        "công thức": r"c^2 = a^2 - b^2; F_1(-c; 0), F_2(c; 0); \text{ Độ dài trục lớn: } 2a, \text{ trục bé: } 2b",
+        "ví dụ": r"\frac{x^2}{16} + \frac{y^2}{9} = 1 \Rightarrow a=4, b=3, c=\sqrt{7}.",
+        "hình_ve": "sp.plot_implicit(x**2/16 + y**2/9 - 1, (x, -5, 5), (y, -4, 4), title='Duong Elip (E): x^2/16 + y^2/9 = 1')"
+    },
+    "Đường Hypebol (Hyperbola)": {
+        "định nghĩa": r"Tập hợp các điểm M sao cho |MF_1 - MF_2| = 2a.",
+        "kí hiệu": r"(H): \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 (a, b > 0)",
+        "công thức": r"c^2 = a^2 + b^2; F_1(-c; 0), F_2(c; 0); \text{ Trục thực: } 2a, \text{ trục ảo: } 2b",
+        "ví dụ": r"\frac{x^2}{9} - \frac{y^2}{16} = 1 \Rightarrow a=3, b=4, c=5.",
+        "hình_ve": "sp.plot_implicit(x**2/9 - y**2/16 - 1, (x, -10, 10), (y, -10, 10), title='Duong Hypebol (H): x^2/9 - y^2/16 = 1')"
+    },
+    "Đường Parabol (Parabola)": {
+        "định nghĩa": r"Tập hợp các điểm M cách đều tiêu điểm F và đường chuẩn delta.",
+        "kí hiệu": r"(P): y^2 = 2px (p > 0)",
+        "công thức": r"F(p/2; 0); \text{ Đường chuẩn: } x = -p/2",
+        "ví dụ": r"y^2 = 4x \Rightarrow p=2, F(1; 0), \text{ chuẩn } x = -1.",
+        "hình_ve": "sp.plot_implicit(y**2 - 4*x, (x, -2, 6), (y, -5, 5), title='Duong Parabol y^2 = 4x')"
+    }
+}
+
+chuong_8_dai_so_to_hop = {
+    "Quy tắc cộng": {
+        "định nghĩa": r"Một công việc được hoàn thành bởi một trong hai phương án độc lập. Phương án A có m cách, phương án B có n cách.",
+        "kí hiệu": r"m + n",
+        "công thức": r"\text{Tổng số cách hoàn thành công việc là: } N = m + n",
+        "ví dụ": r"\text{Chọn 1 quyển sách từ 5 sách Toán hoặc 4 sách Lí } \Rightarrow 5 + 4 = 9 \text{ cách.}",
+        "hình_ve": "sp.plot_implicit(sp.Or(sp.And(x>0, x<5, y>0, y<1), sp.And(x>6, x<10, y>0, y<1)), (x, 0, 11), (y, -1, 2), title='Quy tac cong: Hop cua hai tap hop roi rac')"
+    },
+    "Quy tắc nhân": {
+        "định nghĩa": r"Một công việc bao gồm nhiều công đoạn liên tiếp nhau. Công đoạn 1 có m cách, công đoạn 2 có n cách.",
+        "kí hiệu": r"m \times n",
+        "công thức": r"\text{Tổng số cách hoàn thành công việc là: } N = m \cdot n",
+        "ví dụ": r"\text{Chọn một bộ quần áo gồm 3 áo và 2 quần } \Rightarrow 3 \cdot 2 = 6 \text{ cách.}",
+        "hình_ve": "sp.plot_implicit(sp.And(x >= 1, x <= 3, y >= 1, y <= 2), (x, 0, 4), (y, 0, 3), title='Quy tac nhan: To hop m x n')"
+    },
+    "Sơ đồ cây (Tree Diagram)": {
+        "định nghĩa": r"Công cụ trực quan để liệt kê tất cả các khả năng của một bài toán đếm.",
+        "kí hiệu": r"\text{Tree}",
+        "công thức": r"\text{Mỗi nhánh đại diện cho một lựa chọn tại một công đoạn.}",
+        "ví dụ": r"\text{Liệt kê các kết quả khi tung đồng xu 2 lần liên tiếp.}",
+        "hình_ve": "sp.plotting.plot_parametric((t, t, (t, 0, 1)), (t, -t, (t, 0, 1)), title='Mo phong nhanh so do cay')"
+    },
+    "Giai thừa (Factorial)": {
+        "định nghĩa": r"Tích của n số nguyên dương đầu tiên.",
+        "kí hiệu": r"n!",
+        "công thức": r"n! = n \cdot (n-1) \cdot \dots \cdot 1; \text{ Quy ước: } 0! = 1",
+        "ví dụ": r"5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120",
+        "hình_ve": "plot(sp.gamma(x+1), (x, 0, 5), title='Ham Gamma (Giai thua mo rong)')"
+    },
+    "Hoán vị (Permutation)": {
+        "định nghĩa": r"Sắp xếp n phần tử khác nhau vào n vị trí (có thứ tự).",
+        "kí hiệu": r"P_n",
+        "công thức": r"P_n = n!",
+        "ví dụ": r"\text{Xếp 5 học sinh vào một hàng ngang có } 5! = 120 \text{ cách.}",
+        "hình_ve": "sp.plotting.plot(sp.factorial(x), (x, 0, 6), title='Su tang truong cua hoan vi P_n')"
+    },
+    "Chỉnh hợp (K-permutation)": {
+        "định nghĩa": r"Chọn k phần tử từ n phần tử khác nhau và sắp xếp chúng theo một thứ tự nhất định.",
+        "kí hiệu": r"A_n^k",
+        "công thức": r"A_n^k = \frac{n!}{(n-k)!} \text{ (với } 1 \le k \le n \text{)}",
+        "ví dụ": r"\text{Chọn 3 người làm lớp trưởng, lớp phó, thư ký từ 10 người: } A_{10}^3 = 720.",
+        "hình_ve": "sp.plotting.plot(sp.ff(x, 3), (x, 3, 10), title='Chinh hop chap 3 cua n (A_n^3)')"
+    },
+    "Tổ hợp (Combination)": {
+        "định nghĩa": r"Chọn k phần tử từ n phần tử khác nhau (không quan tâm thứ tự).",
+        "kí hiệu": r"C_n^k \text{ hoặc } \binom{n}{k}",
+        "công thức": r"C_n^k = \frac{n!}{k!(n-k)!}",
+        "ví dụ": r"\text{Chọn 3 người đi trực nhật từ 10 người: } C_{10}^3 = 120.",
+        "hình_ve": "sp.plotting.plot(sp.binomial(x, 3), (x, 3, 10), title='To hop chap 3 cua n (C_n^3)')"
+    },
+    "Nhị thức Newton (Binomial Expansion)": {
+        "định nghĩa": r"Công thức khai triển biểu thức lũy thừa của một tổng.",
+        "kí hiệu": r"(a+b)^n",
+        "công thức bậc 4": r"(a+b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4",
+        "ví dụ": r"(x+1)^4 = x^4 + 4x^3 + 6x^2 + 4x + 1",
+        "hình_ve": "plot((x+1)**4, (x, -2, 1), title='Do thi ham nhi thuc (x+1)^4')"
+    },
+    "Tam giác Pascal": {
+        "định nghĩa": r"Bảng tam giác các hệ số của nhị thức Newton.",
+        "kí hiệu": r"\text{Pascal Triangle}",
+        "công thức": r"C_n^k = C_{n-1}^{k-1} + C_{n-1}^k",
+        "ví dụ": r"\text{Dòng 4: 1, 4, 6, 4, 1}",
+        "hình_ve": "sp.plotting.plot(sp.Piecewise((1, sp.And(x>0.9, x<1.1)), (4, sp.And(x>1.9, x<2.1)), (6, sp.And(x>2.9, x<3.1)), (4, sp.And(x>3.9, x<4.1)), (1, sp.And(x>4.9, x<5.1)), (0, True)), (x, 0, 6), title='He so dong 4 tam giac Pascal')"
+    }
+}
+
+chuong_9_xac_suat = {
+    "Phép thử ngẫu nhiên": {
+        "định nghĩa": r"Là một hành động hay thực nghiệm mà kết quả không thể biết trước, nhưng ta biết được tập hợp tất cả các kết quả có thể xảy ra.",
+        "kí hiệu": r"T",
+        "ví dụ": r"\text{Gieo một đồng xu 2 lần; Rút một quân bài từ bộ bài 52 lá.}"
+    },
+    "Không gian mẫu": {
+        "định nghĩa": r"Tập hợp tất cả các kết quả có thể xảy ra của phép thử ngẫu nhiên.",
+        "kí hiệu": r"\Omega",
+        "công thức": r"n(\Omega) \text{ là số phần tử của không gian mẫu.}",
+        "ví dụ": r"\text{Gieo 2 đồng xu: } \Omega = \{SS, SN, NS, NN\} \Rightarrow n(\Omega) = 4."
+    },
+    "Biến cố": {
+        "định nghĩa": r"Là một tập con của không gian mẫu. Mỗi phần tử của biến cố được gọi là một kết quả thuận lợi.",
+        "kí hiệu": r"A, B, C \subset \Omega",
+        "công thức": r"n(A) \text{ là số kết quả thuận lợi cho biến cố A.}",
+        "ví dụ": r"\text{Gieo con xúc xắc, biến cố A 'số chấm lẻ': } A = \{1, 3, 5\} \Rightarrow n(A) = 3."
+    },
+    "Biến cố không thể và Biến cố chắc chắn": {
+        "định nghĩa": r"Biến cố không bao giờ xảy ra gọi là biến cố không thể. Biến cố luôn luôn xảy ra gọi là biến cố chắc chắn.",
+        "kí hiệu": r"\varnothing \text{ (không thể), } \Omega \text{ (chắc chắn)}",
+        "công thức": r"P(\varnothing) = 0; P(\Omega) = 1",
+        "ví dụ": r"\text{Gieo xúc xắc mặt 7 chấm là biến cố không thể.}"
+    },
+    "Định nghĩa cổ điển của xác suất": {
+        "định nghĩa": r"Tỉ số giữa số kết quả thuận lợi cho biến cố và tổng số kết quả có thể xảy ra (trong điều kiện các kết quả đồng khả năng).",
+        "kí hiệu": r"P(A)",
+        "công thức": r"P(A) = \frac{n(A)}{n(\Omega)} \text{ (với } 0 \le P(A) \le 1 \text{)}",
+        "ví dụ": r"\text{Chọn 2 học sinh từ nhóm 10 học sinh (6 nam, 4 nữ). Xác suất 2 nữ: } P = \frac{C_4^2}{C_{10}^2}."
+    },
+    "Biến cố đối": {
+        "định nghĩa": r"Là biến cố 'A không xảy ra'. Nếu A là một tập con của \Omega thì biến cố đối là phần bù của A trong \Omega.",
+        "kí hiệu": r"\overline{A}",
+        "công thức": r"P(\overline{A}) = 1 - P(A)",
+        "ví dụ": r"\text{Xác suất bắn trượt = 1 - Xác suất bắn trúng.}"
+    },
+    "Các quy tắc tính xác suất cơ bản": {
+        "định nghĩa": r"Sử dụng quy tắc cộng và quy tắc nhân từ chương tổ hợp để tìm n(A) và n(\Omega).",
+        "kí hiệu": r"\text{Quy tắc cộng, Quy tắc nhân}",
+        "công thức": r"\text{Thường dùng Hoán vị, Chỉnh hợp, Tổ hợp để đếm phần tử.}",
+        "ví dụ": r"\text{Lấy ngẫu nhiên 3 viên bi từ túi. Cần tính } C_n^k \text{ cho cả tử và mẫu.}"
     }
 }
 
 chuong_1_toan_11 = {
-    "Góc lượng giác": {"định nghĩa": r"Là góc có xét đến chiều quay. Góc lượng giác được xác định bởi tia đầu và tia cuối.",
-                       "kí hiệu": r"(Ox, Oy), \alpha",
-                       "công thức": r"\alpha = \widehat{(Ox, Oy)}",
-                       "ví dụ": r"\alpha = 60^\circ, \alpha = -30^\circ"},
-
-    "Đường tròn lượng giác": {"định nghĩa": r"Là đường tròn tâm O bán kính 1 trong mặt phẳng tọa độ.",
-                              "kí hiệu": r"(O;1)",
-                              "công thức": r"x^2 + y^2 = 1",
-                              "ví dụ": r"M(\cos\alpha, \sin\alpha) thuộc (O;1)"},
-
-    "Giá trị lượng giác của một góc": {"định nghĩa": r"Với mỗi góc lượng giác xác định các giá trị sin, cos, tan, cot.",
-                                       "kí hiệu": r"\sin\alpha, \cos\alpha, \tan\alpha, \cot\alpha",
-                                       "công thức": r"\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}",
-                                       "ví dụ": r"\sin 30^\circ = \dfrac{1}{2}"},
-
-    "Công thức lượng giác cơ bản": {"định nghĩa": r"Các hệ thức liên hệ giữa sin và cos.",
-                                    "kí hiệu": r"\sin^2\alpha + \cos^2\alpha = 1",
-                                    "công thức": r"1 + \tan^2\alpha = \dfrac{1}{\cos^2\alpha}",
-                                    "ví dụ": r"\sin^2 45^\circ + \cos^2 45^\circ = 1"},
-
-    "Hàm số y = sin x": {"định nghĩa": r"Hàm số xác định với mọi x thuộc R.",
-                         "kí hiệu": r"y = \sin x",
-                         "công thức": r"Tập xác định: \mathbb{R}, Chu kỳ: 2\pi",
-                         "ví dụ": r"\sin(x + 2\pi) = \sin x"},
-
-    "Hàm số y = cos x": {"định nghĩa": r"Hàm số xác định với mọi x thuộc R.",
-                         "kí hiệu": r"y = \cos x",
-                         "công thức": r"Tập xác định: \mathbb{R}, Chu kỳ: 2\pi",
-                         "ví dụ": r"\cos(x + 2\pi) = \cos x"},
-
-    "Hàm số y = tan x": {"định nghĩa": r"Hàm số xác định khi cos x ≠ 0.",
-                         "kí hiệu": r"y = \tan x",
-                         "công thức": r"Tập xác định: \mathbb{R} \setminus \{\dfrac{\pi}{2} + k\pi\}",
-                         "ví dụ": r"\tan(x + \pi) = \tan x"},
-
-    "Phương trình lượng giác cơ bản": {"định nghĩa": r"Các phương trình dạng sin x = a, cos x = a, tan x = a.",
-                                       "kí hiệu": r"\sin x = a",
-                                       "công thức": r"\sin x = a \Leftrightarrow x = \arcsin a + k2\pi",
-                                       "ví dụ": r"\sin x = 0 \Leftrightarrow x = k\pi"}
+    "Góc lượng giác": {
+        "định nghĩa": r"Là góc có xét đến chiều quay. Góc lượng giác được xác định bởi tia đầu và tia cuối.",
+        "kí hiệu": r"(Ox, Oy), \alpha",
+        "công thức": r"\alpha = \widehat{(Ox, Oy)} + k360^\circ \text{ hoặc } \alpha + k2\pi",
+        "ví dụ": r"\alpha = 60^\circ, \alpha = -30^\circ",
+        "hình_ve": "sp.plotting.plot_parametric(sp.cos(t), sp.sin(t), (t, 0, sp.pi/3), title='Goc luong giac duong (60 do)')"
+    },
+    "Đường tròn lượng giác": {
+        "định nghĩa": r"Là đường tròn tâm O bán kính 1 trong mặt phẳng tọa độ, quy ước chiều dương là ngược chiều kim đồng hồ.",
+        "kí hiệu": r"(O;1)",
+        "công thức": r"x^2 + y^2 = 1",
+        "ví dụ": r"M(\cos\alpha, \sin\alpha) \text{ thuộc đường tròn lượng giác.}",
+        "hình_ve": "sp.plot_implicit(x**2 + y**2 - 1, (x, -1.5, 1.5), (y, -1.5, 1.5), title='Duong tron luong giac')"
+    },
+    "Giá trị lượng giác của một góc": {
+        "định nghĩa": r"Với mỗi góc lượng giác \alpha, xác định các giá trị tương ứng trên các trục tọa độ.",
+        "kí hiệu": r"\sin\alpha, \cos\alpha, \tan\alpha, \cot\alpha",
+        "công thức": r"\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}; \cot\alpha = \dfrac{\cos\alpha}{\sin\alpha}",
+        "ví dụ": r"\sin 30^\circ = 0.5; \cos 30^\circ = \sqrt{3}/2",
+        "hình_ve": "sp.plotting.plot_parametric((t, 0, (t, 0, 1)), (0, t, (t, 0, 1)), title='Truc Sin (dung) va Truc Cos (ngang)')"
+    },
+    "Công thức lượng giác cơ bản": {
+        "định nghĩa": r"Các hệ thức liên hệ mật thiết giữa các giá trị lượng giác của cùng một góc.",
+        "kí hiệu": r"\sin^2\alpha + \cos^2\alpha = 1",
+        "công thức": r"1 + \tan^2\alpha = \dfrac{1}{\cos^2\alpha}; 1 + \cot^2\alpha = \dfrac{1}{\sin^2\alpha}",
+        "ví dụ": r"\tan \alpha \cdot \cot \alpha = 1",
+        "hình_ve": "sp.plotting.plot(sp.sin(x)**2 + sp.cos(x)**2, (x, -sp.pi, sp.pi), title='Do thi f(x) = sin^2 + cos^2 = 1')"
+    },
+    "Hàm số y = sin x": {
+        "định nghĩa": r"Hàm số lẻ, tuần hoàn với chu kỳ 2\pi, tập giá trị [-1; 1].",
+        "kí hiệu": r"y = \sin x",
+        "công thức": r"D = \mathbb{R}, T = 2\pi",
+        "ví dụ": r"\sin(x + 2\pi) = \sin x",
+        "hình_ve": "sp.plotting.plot(sp.sin(x), (x, -2*sp.pi, 2*sp.pi), title='Do thi ham so y = sin(x)')"
+    },
+    "Hàm số y = cos x": {
+        "định nghĩa": r"Hàm số chẵn, tuần hoàn với chu kỳ 2\pi, tập giá trị [-1; 1].",
+        "kí hiệu": r"y = \cos x",
+        "công thức": r"D = \mathbb{R}, T = 2\pi",
+        "ví dụ": r"\cos(x + 2\pi) = \cos x",
+        "hình_ve": "sp.plotting.plot(sp.cos(x), (x, -2*sp.pi, 2*sp.pi), title='Do thi ham so y = cos(x)')"
+    },
+    "Hàm số y = tan x": {
+        "định nghĩa": r"Hàm số lẻ, tuần hoàn với chu kỳ \pi.",
+        "kí hiệu": r"y = \tan x",
+        "công thức": r"D = \mathbb{R} \setminus \{\dfrac{\pi}{2} + k\pi\}",
+        "ví dụ": r"\tan(x + \pi) = \tan x",
+        "hình_ve": "sp.plotting.plot(sp.tan(x), (x, -sp.pi/2 + 0.1, sp.pi/2 - 0.1), title='Do thi ham so y = tan(x)')"
+    },
+    "Hàm số y = cot x": {
+        "định nghĩa": r"Hàm số lẻ, tuần hoàn với chu kỳ \pi.",
+        "kí hiệu": r"y = \cot x",
+        "công thức": r"D = \mathbb{R} \setminus \{k\pi\}",
+        "ví dụ": r"\cot(\pi/4) = 1",
+        "hình_ve": "sp.plotting.plot(1/sp.tan(x), (x, 0.1, sp.pi - 0.1), title='Do thi ham so y = cot(x)')"
+    },
+    "Phương trình lượng giác cơ bản": {
+        "định nghĩa": r"Các phương trình có dạng f(x) = a với f là hàm số lượng giác.",
+        "kí hiệu": r"\sin x = a, \cos x = a, \tan x = a, \cot x = a",
+        "công thức": r"\sin x = \sin \alpha \Leftrightarrow x = \alpha + k2\pi \text{ hoặc } x = \pi - \alpha + k2\pi",
+        "ví dụ": r"\sin x = 0 \Leftrightarrow x = k\pi",
+        "hình_ve": "sp.plotting.plot(sp.sin(x), 0.5, (x, -2*sp.pi, 2*sp.pi), title='Giao diem sin(x) va duong thang y=0.5')"
+    }
 }
+
 chuong_2_toan_11 = {
     "Dãy số": {"định nghĩa": r"Là một hàm số xác định trên tập các số tự nhiên.",
                "kí hiệu": r"(u_n)",
@@ -353,7 +595,124 @@ chuong_2_toan_11 = {
                                                     "công thức": r"S_n = u_1 \dfrac{q^n - 1}{q - 1}",
                                                     "ví dụ": r"S_3 = u_1 \dfrac{q^3 - 1}{q - 1}"}
 }
+
 chuong_3_toan_11 = {
+    "Giới hạn của dãy số": {
+        "định nghĩa": "Dãy số (u_n) có giới hạn L khi n tiến ra vô cùng nếu khoảng cách |u_n - L| nhỏ tùy ý khi n đủ lớn.",
+        "kí hiệu": r"\lim_{n \to +\infty} u_n = L \text{ hoặc } u_n \to L",
+        "công thức": r"\lim \frac{1}{n^k} = 0; \lim q^n = 0 \text{ (|q| < 1)}",
+        "ví dụ": r"\lim \frac{2n+1}{n} = 2",
+        "hình_ve": "limit((2*n+1)/n, n, oo)"
+    },
+    "Giới hạn hữu hạn của hàm số": {
+        "định nghĩa": "Hàm số f(x) có giới hạn L khi x tiến dần đến x_0 nếu giá trị f(x) gần L tùy ý khi x đủ gần x_0.",
+        "kí hiệu": r"\lim_{x \to x_0} f(x) = L",
+        "công thức": r"\text{Các quy tắc cộng, trừ, nhân, chia giới hạn tương tự số thực.}",
+        "ví dụ": r"\lim_{x \to 1} (x^2 + 1) = 2",
+        "hình_ve": "plot(x**2 + 1, (x, -2, 2)) # Vẽ đồ thị để thấy sự hội tụ tại x=1"
+    },
+    "Giới hạn vô cực": {
+        "định nghĩa": "Khi x tiến tới x_0 hoặc vô cực, giá trị f(x) tăng hoặc giảm không giới hạn.",
+        "kí hiệu": r"\lim_{x \to x_0} f(x) = +\infty; \lim_{x \to x_0} f(x) = -\infty",
+        "công thức": r"\frac{L}{0} \to \infty; \frac{L}{\infty} \to 0",
+        "ví dụ": r"\lim_{x \to 0^+} \frac{1}{x} = +\infty",
+        "hình_ve": "plot(1/x, (x, 0.1, 5), title='Tiệm cận đứng tại x=0')"
+    },
+    "Hàm số liên tục tại một điểm": {
+        "định nghĩa": "Hàm số f(x) liên tục tại x_0 nếu giới hạn của hàm số tại đó bằng đúng giá trị của hàm số.",
+        "kí hiệu": r"\text{Liên tục tại } x_0",
+        "công thức": r"\lim_{x \to x_0} f(x) = f(x_0)",
+        "ví dụ": r"\text{Hàm đa thức luôn liên tục trên } \mathbb{R}.",
+        "hình_ve": "plot(Piecewise((x**2, x < 1), (2-x, x >= 1)), (x, 0, 2)) # Vẽ hàm ghép để kiểm tra tính liên tục"
+    },
+    "Hàm số liên tục trên một khoảng": {
+        "định nghĩa": "Hàm số liên tục tại mọi điểm thuộc khoảng đó.",
+        "kí hiệu": r"f \in C(a; b)",
+        "công thức": r"\text{Hàm số sơ cấp liên tục trên các khoảng xác định của chúng.}",
+        "ví dụ": r"y = \sqrt{x} \text{ liên tục trên } [0; +\infty).",
+        "hình_ve": "plot(sqrt(x), (x, 0, 10))"
+    },
+    "Giới hạn một bên": {"định nghĩa": r"Giới hạn khi x tiến đến a từ bên trái hoặc bên phải.",
+                         "kí hiệu": r"\lim_{x \to a^-}, \lim_{x \to a^+}",
+                         "công thức": r"\lim_{x \to a} f(x) tồn tại ⇔ \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x)",
+                         "ví dụ": r"\lim_{x \to 0^+} \dfrac{1}{x} = +\infty"},
+
+    "Định lí giá trị trung gian": {
+        "định nghĩa": "Nếu f(x) liên tục trên [a; b] và f(a).f(b) < 0 thì tồn tại ít nhất một điểm c thuộc (a; b) sao cho f(c) = 0.",
+        "kí hiệu": r"f(a) \cdot f(b) < 0 \Rightarrow \exists c \in (a, b): f(c) = 0",
+        "công thức": r"\text{Dùng để chứng minh phương trình có nghiệm.}",
+        "ví dụ": r"\text{Chứng minh } x^3 + x - 1 = 0 \text{ có nghiệm trong } (0, 1).",
+        "hình_ve": "plot(x**3 + x - 1, (x, 0, 1)) # Đường cong cắt trục hoành"
+    }
+}
+
+chuong_4_toan_11 = {
+    "Điểm, đường thẳng và mặt phẳng": {
+        "định nghĩa": "Các đối tượng cơ bản của hình học không gian. Một mặt phẳng được xác định bởi 3 điểm không thẳng hàng, hoặc 1 đường thẳng và 1 điểm ngoài nó.",
+        "kí hiệu": r"A, B \in \Delta; \Delta \subset (P); (P) \equiv (ABC)",
+        "công thức": r"\text{Ba cách xác định mặt phẳng: (3 điểm), (đường + điểm), (2 đường cắt nhau).}",
+        "ví dụ": r"\text{Hình chóp S.ABCD có các mặt bên là (SAB), (SBC),...}",
+        "hình_ve": "sp.plotting.plot3d_parametric_line(t, t, t, (t, 0, 1))" # Mô phỏng một đường thẳng trong không gian 3D
+    },
+    "Giao tuyến của hai mặt phẳng": {
+        "định nghĩa": "Đường thẳng chung của hai mặt phẳng phân biệt. Để tìm giao tuyến, ta tìm hai điểm chung phân biệt.",
+        "kí hiệu": r"d = (P) \cap (Q)",
+        "công thức": r"\begin{cases} A \in (P) \cap (Q) \\ B \in (P) \cap (Q) \end{cases} \Rightarrow AB = (P) \cap (Q)",
+        "ví dụ": r"\text{Giao tuyến của (SAB) và (SAD) trong hình chóp là SA.}",
+        "hình_ve": "sp.plotting.plot3d(x + y, (x, -1, 1), (y, -1, 1), show=False)" # Mô phỏng mặt phẳng (P)
+    },
+    "Đường thẳng song song với mặt phẳng": {
+        "định nghĩa": "Đường thẳng và mặt phẳng không có điểm chung.",
+        "kí hiệu": r"d \parallel (P)",
+        "công thức": r"\begin{cases} d \not\subset (P) \\ d \parallel d' \\ d' \subset (P) \end{cases} \Rightarrow d \parallel (P)",
+        "ví dụ": r"\text{Trong hình hộp, cạnh trên song song với mặt đáy.}",
+        "hình_ve": "sp.plotting.plot3d(0, (x, -1, 1), (y, -1, 1), show=False)" # Mặt đáy z=0
+    },
+    "Hai mặt phẳng song song": {
+        "định nghĩa": "Hai mặt phẳng không có điểm chung.",
+        "kí hiệu": r"(P) \parallel (Q)",
+        "công thức": r"\begin{cases} a, b \subset (P), a \cap b = \{I\} \\ a \parallel (Q), b \parallel (Q) \end{cases} \Rightarrow (P) \parallel (Q)",
+        "ví dụ": r"\text{Hai mặt đáy của hình lăng trụ song song với nhau.}",
+        "hình_ve": "sp.plotting.plot3d((1, (x, -1, 1), (y, -1, 1)), (2, (x, -1, 1), (y, -1, 1)), show=False)" # Vẽ 2 mặt phẳng z=1 và z=2
+    },
+    "Phép chiếu song song": {
+        "định nghĩa": "Phép đặt tương ứng mỗi điểm M trong không gian với điểm M' trên mặt phẳng (P) theo phương l của đường thẳng cắt (P).",
+        "kí hiệu": r"pr_{(P), l} (M) = M'",
+        "công thức": r"\text{Bảo toàn tính thẳng hàng, thứ tự điểm và tỉ số độ dài đoạn thẳng song song.}",
+        "ví dụ": r"\text{Hình biểu diễn của hình vuông qua phép chiếu song song là hình bình hành.}",
+        "hình_ve": "sp.plotting.plot3d(x, (x, -1, 1), (y, -1, 1), show=False)"
+    "Đường thẳng song song với đường thẳng": {
+        "định nghĩa": "Hai đường thẳng cùng nằm trong một mặt phẳng và không có điểm chung. Trong không gian, hai đường thẳng không cùng nằm trong một mặt phẳng gọi là chéo nhau.",
+        "kí hiệu": r"a \parallel b, a \text{ chéo } b",
+        "công thức": r"\text{Định lý 3 đường giao tuyến: } \begin{cases} (P) \cap (Q) = a \\ (Q) \cap (R) = b \\ (R) \cap (P) = c \end{cases} \Rightarrow a, b, c \parallel \text{ hoặc đồng quy.}",
+        "ví dụ": r"\text{Trong hình chóp có đáy là hình bình hành, các cặp cạnh đối diện của đáy song song với nhau.}",
+        "hình_ve": "sp.plotting.plot3d_parametric_line((t, 0, 0), (t, 1, 0), (t, 0, 1))" # Vẽ các đường song song
+    },
+    "Thiết diện (Mặt cắt)": {
+        "định nghĩa": "Giao của một mặt phẳng với các mặt của một hình khối (hình chóp, hình lăng trụ). Thiết diện là một đa giác.",
+        "kí hiệu": r"H = (P) \cap \text{Hình khối}",
+        "công thức": r"\text{Tìm các đoạn giao tuyến của mặt phẳng (P) với từng mặt của hình khối cho đến khi khép kín.}",
+        "ví dụ": r"\text{Thiết diện của hình chóp tứ giác cắt bởi mặt phẳng song song với đáy là một tứ giác.}",
+        "hình_ve": "sp.plotting.plot3d(x + y, (x, -1, 1), (y, -1, 1), show=False)" 
+    },
+    "Định lý Thales trong không gian": {
+        "định nghĩa": "Ba mặt phẳng đôi một song song chắn trên hai cát tuyến bất kỳ những đoạn thẳng tương ứng tỉ lệ.",
+        "kí hiệu": r"\frac{AB}{A'B'} = \frac{BC}{B'C'} = \frac{AC}{A'C'}",
+        "công thức": r"\text{Nếu } (P) \parallel (Q) \parallel (R) \text{ cắt hai đường thẳng d, d' lần lượt tại A, B, C và A', B', C'.}",
+        "ví dụ": r"\text{Ứng dụng để tính độ dài đoạn thẳng trong các bài toán lăng trụ cắt bởi mặt phẳng.}",
+        "hình_ve": "sp.plotting.plot3d((1, (x, -1, 1), (y, -1, 1)), (2, (x, -1, 1), (y, -1, 1)), (3, (x, -1, 1), (y, -1, 1)), show=False)"
+    },
+    "Hình lăng trụ và Hình chóp cụt": {
+        "định nghĩa": "Hình lăng trụ có hai đáy là hai đa giác bằng nhau và nằm trên hai mặt phẳng song song, các cạnh bên song song và bằng nhau.",
+        "kí hiệu": r"ABC.A'B'C' \text{ (Lăng trụ tam giác)}",
+        "công thức": r"\text{Các mặt bên của hình lăng trụ là các hình bình hành.}",
+        "ví dụ": r"\text{Hình hộp là một trường hợp đặc biệt của hình lăng trụ có đáy là hình bình hành.}",
+        "hình_ve": "sp.plotting.plot3d_parametric_line((0, 0, t), (1, 0, t), (0, 1, t), (t, 0, 1))"
+    }
+    }
+}
+
+chuong_5_toan_11 = {
     "Mẫu số liệu ghép nhóm": {"định nghĩa": r"Là mẫu số liệu được phân chia thành các lớp (nhóm) với tần số tương ứng.",
                                "kí hiệu": r"[a_i; b_i), n_i",
                                "công thức": r"N = \sum n_i",
@@ -384,32 +743,7 @@ chuong_3_toan_11 = {
                                       "công thức": r"\overline{x} \approx Me \approx Mo \text{ (khi phân bố đối xứng)}",
                                       "ví dụ": r"Dùng để đánh giá mức độ điển hình của dữ liệu"}
 }
-chuong_4_toan_11 = {
-    "Hai đường thẳng song song": {"định nghĩa": r"Hai đường thẳng trong không gian được gọi là song song nếu chúng cùng nằm trong một mặt phẳng và không có điểm chung.",
-                                   "kí hiệu": r"a \parallel b",
-                                   "công thức": r"a \parallel b \Leftrightarrow a, b \subset (P) \text{ và } a \cap b = \varnothing",
-                                   "ví dụ": r"Trong hình hộp ABCD.A'B'C'D', ta có AB \parallel CD"},
 
-    "Đường thẳng song song với mặt phẳng": {"định nghĩa": r"Đường thẳng d được gọi là song song với mặt phẳng (P) nếu d không nằm trong (P) và không có điểm chung với (P).",
-                                             "kí hiệu": r"d \parallel (P)",
-                                             "công thức": r"d \parallel (P) \Leftrightarrow d \cap (P) = \varnothing",
-                                             "ví dụ": r"Trong hình chóp S.ABCD, nếu AB \parallel CD thì AB \parallel (SCD)"},
-
-    "Hai mặt phẳng song song": {"định nghĩa": r"Hai mặt phẳng được gọi là song song nếu chúng không có điểm chung.",
-                                 "kí hiệu": r"(P) \parallel (Q)",
-                                 "công thức": r"(P) \parallel (Q) \Rightarrow (P) \cap (Q) = \varnothing",
-                                 "ví dụ": r"Trong hình hộp, (ABCD) \parallel (A'B'C'D')"},
-
-    "Tính chất đường thẳng song song": {"định nghĩa": r"Qua một điểm nằm ngoài một đường thẳng cho trước, có duy nhất một đường thẳng song song với đường thẳng đó.",
-                                         "kí hiệu": r"\exists ! d' \parallel d",
-                                         "công thức": r"M \notin d \Rightarrow \exists ! d' \text{ qua } M \text{ và } d' \parallel d",
-                                         "ví dụ": r"Qua điểm A ngoài d, chỉ có một đường thẳng song song với d"},
-
-    "Định lí về giao tuyến song song": {"định nghĩa": r"Nếu hai mặt phẳng song song bị cắt bởi mặt phẳng thứ ba thì các giao tuyến song song với nhau.",
-                                         "kí hiệu": r"d_1 \parallel d_2",
-                                         "công thức": r"(P) \parallel (Q), (R) \cap (P) = d_1, (R) \cap (Q) = d_2 \Rightarrow d_1 \parallel d_2",
-                                         "ví dụ": r"Cắt hai mặt phẳng song song bởi mặt phẳng thứ ba được hai đường thẳng song song"}
-}
 chuong_5_toan_11 = {
     "Giới hạn của dãy số": {"định nghĩa": r"Dãy số (u_n) có giới hạn L khi n tiến tới vô cực nếu u_n tiến gần đến L.",
                              "kí hiệu": r"\lim u_n = L",
@@ -445,4 +779,185 @@ chuong_5_toan_11 = {
                                  "kí hiệu": r"\lim (f(x) + g(x))",
                                  "công thức": r"\lim (f(x) + g(x)) = \lim f(x) + \lim g(x)",
                                  "ví dụ": r"\lim_{x \to 1} (x^2 + 3x) = 1 + 3 = 4"}
+
+}
+
+chuong_6_toan_11 = {
+    "Định nghĩa đạo hàm tại một điểm": {
+        "định nghĩa": "Đạo hàm của hàm số y = f(x) tại điểm x_0 là giới hạn của tỉ số giữa số gia của hàm số và số gia của đối số khi số gia đối số tiến dần về 0.",
+        "kí hiệu": r"f'(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}",
+        "công thức": r"f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}",
+        "ví dụ": r"\text{Tính đạo hàm của } f(x) = x^2 \text{ tại } x=1 \Rightarrow f'(1) = 2.",
+        "hình_ve": "plot(x**2, (x, -2, 2), title='Minh hoa dao ham tai mot diem')"
+    },
+    "Ý nghĩa hình học của đạo hàm": {
+        "định nghĩa": "Đạo hàm f'(x_0) là hệ số góc của tiếp tuyến của đồ thị hàm số y = f(x) tại điểm M(x_0; f(x_0)).",
+        "kí hiệu": r"k = f'(x_0)",
+        "công thức": r"y - y_0 = f'(x_0)(x - x_0) \text{ (Phương trình tiếp tuyến)}",
+        "ví dụ": r"\text{Tiếp tuyến của } y=x^2 \text{ tại } (1,1) \text{ là } y = 2(x-1) + 1 = 2x - 1.",
+        "hình_ve": "plot(x**2, 2*x - 1, (x, -1, 3), title='Do thi va Tiep tuyen')"
+    },
+    "Quy tắc tính đạo hàm cơ bản": {
+        "định nghĩa": "Các quy tắc để tính đạo hàm của tổng, hiệu, tích, thương các hàm số.",
+        "kí hiệu": r"(u+v)', (uv)', (\frac{u}{v})'",
+        "công thức": [
+            r"(u \pm v)' = u' \pm v'",
+            r"(uv)' = u'v + uv'",
+            r"(\frac{u}{v})' = \frac{u'v - uv'}{v^2}"
+        ],
+        "ví dụ": r"(x \cdot \sin x)' = \sin x + x \cdot \cos x.",
+        "hình_ve": "plot(sp.diff(x**3 - 2*x, x), (x, -2, 2), title='Do thi ham dao ham f prime(x)')"
+    },
+    "Đạo hàm của hàm hợp": {
+        "định nghĩa": "Nếu y = f(u) và u = u(x) thì đạo hàm của y theo x được tính qua trung gian u.",
+        "kí hiệu": r"y'_x = y'_u \cdot u'_x",
+        "công thức": r"(u^n)' = n \cdot u^{n-1} \cdot u'",
+        "ví dụ": r"((x^2+1)^3)' = 3(x^2+1)^2 \cdot 2x = 6x(x^2+1)^2.",
+        "hình_ve": "plot(sp.diff((x**2+1)**3, x), (x, -1, 1))"
+    },
+    "Đạo hàm của các hàm lượng giác": {
+        "định nghĩa": "Bảng đạo hàm của 4 hàm số lượng giác cơ bản.",
+        "kí hiệu": r"(\sin x)', (\cos x)', (\tan x)', (\cot x)'",
+        "công thức": [
+            r"(\sin x)' = \cos x",
+            r"(\cos x)' = -\sin x",
+            r"(\tan x)' = \frac{1}{\cos^2 x}",
+            r"(\cot x)' = -\frac{1}{\sin^2 x}"
+        ],
+        "ví dụ": r"(\sin 2x)' = 2\cos 2x.",
+        "hình_ve": "plot(sp.sin(x), sp.cos(x), (x, -sp.pi, sp.pi), title='Ham so va Dao ham luong giac')"
+    },
+    "Đạo hàm cấp hai": {
+        "định nghĩa": "Đạo hàm của đạo hàm cấp một. Có ý nghĩa vật lý là gia tốc của chuyển động.",
+        "kí hiệu": r"f''(x) \text{ hoặc } y''",
+        "công thức": r"f''(x) = (f'(x))'",
+        "ví dụ": r"y = x^3 \Rightarrow y' = 3x^2 \Rightarrow y'' = 6x.",
+        "hình_ve": "plot(x**3, 3*x**2, 6*x, (x, -2, 2), title='Dao ham cap 1 va cap 2')"
+    }
+}
+chuong_7_toan_11 = {
+    "Phép tính lũy thừa": {
+        "định nghĩa": "Mở rộng khái niệm lũy thừa từ số mũ nguyên sang số mũ hữu tỉ và số thực.",
+        "kí hiệu": r"a^\alpha \text{ (a là cơ số, } \alpha \text{ là số mũ)}",
+        "công thức": [
+            r"a^m \cdot a^n = a^{m+n}",
+            r"\frac{a^m}{a^n} = a^{m-n}",
+            r"(a^m)^n = a^{m \cdot n}",
+            r"\sqrt[n]{a^m} = a^{\frac{m}{n}}"
+        ],
+        "ví dụ": r"8^{\frac{2}{3}} = \sqrt[3]{8^2} = \sqrt[3]{64} = 4.",
+        "hình_ve": "plot(x**2, x**3, (x, 0, 2), title='Cac ham luy thua co ban')"
+    },
+    "Khái niệm Lôgarit": {
+        "định nghĩa": "Lôgarit cơ số a của b là số mũ alpha sao cho a mũ alpha bằng b.",
+        "kí hiệu": r"\log_a b = \alpha \Leftrightarrow a^\alpha = b \text{ (với } 0 < a \neq 1, b > 0 \text{)}",
+        "công thức": [
+            r"\log_a (MN) = \log_a M + \log_a N",
+            r"\log_a (\frac{M}{N}) = \log_a M - \log_a N",
+            r"\log_a M^\alpha = \alpha \log_a M",
+            r"\log_a b = \frac{\log_c b}{\log_c a} \text{ (Đổi cơ số)}"
+        ],
+        "ví dụ": r"\log_2 8 = 3 \text{ vì } 2^3 = 8.",
+        "hình_ve": "plot(sp.log(x, 2), (x, 0.1, 5), title='Do thi ham so Logarit')"
+    },
+    "Hàm số mũ": {
+        "định nghĩa": "Hàm số có dạng y = a^x với cơ số a dương và khác 1.",
+        "kí hiệu": r"y = a^x",
+        "tính_chất": r"\text{Nếu } a > 1 \text{ hàm đồng biến; nếu } 0 < a < 1 \text{ hàm nghịch biến. Luôn đi qua (0;1).}",
+        "ví dụ": r"y = 2^x \text{ tăng trưởng rất nhanh khi x tăng.}",
+        "hình_ve": "plot(2**x, (0.5)**x, (x, -2, 2), title='Ham so mu a>1 va 0<a<1')"
+    },
+    "Hàm số lôgarit": {
+        "định nghĩa": "Hàm số có dạng y = log_a(x) với cơ số a dương và khác 1.",
+        "kí hiệu": r"y = \log_a x",
+        "tính_chất": r"\text{Tập xác định } D = (0; +\infty). \text{ Đồ thị đối xứng với hàm số mũ qua đường thẳng y = x.}",
+        "ví dụ": r"y = \ln x \text{ (lôgarit tự nhiên cơ số e).}",
+        "hình_ve": "plot(sp.log(x, sp.E), (x, 0.1, 5), title='Ham so Logarit tu nhien ln(x)')"
+    },
+    "Phương trình mũ và lôgarit cơ bản": {
+        "định nghĩa": "Giải phương trình tìm x nằm ở vị trí số mũ hoặc trong biểu thức lôgarit.",
+        "kí hiệu": r"a^x = b; \log_a x = b",
+        "công thức": [
+            r"a^x = b \Leftrightarrow x = \log_a b \text{ (với b > 0)}",
+            r"\log_a x = b \Leftrightarrow x = a^b"
+        ],
+        "ví dụ": r"2^x = 5 \Leftrightarrow x = \log_2 5.",
+        "hình_ve": "plot(2**x, 5, (x, 0, 3), title='Giao diem la nghiem cua phuong trinh')"
+    }
+}
+
+chuong_8_toan_11 = {
+    "Đường thẳng vuông góc với mặt phẳng": {
+        "định nghĩa": "Một đường thẳng được gọi là vuông góc với mặt phẳng nếu nó vuông góc với mọi đường thẳng nằm trong mặt phẳng đó.",
+        "kí hiệu": r"d \perp (P)",
+        "công thức": r"\begin{cases} d \perp a, d \perp b \\ a, b \subset (P), a \cap b = \{I\} \end{cases} \Rightarrow d \perp (P)",
+        "ví dụ": r"\text{Trong hình chóp S.ABC, nếu } SA \perp (ABC) \text{ thì SA vuông góc với AB, BC và AC.}",
+        "hình_ve": "sp.plotting.plot3d_parametric_line(0, 0, t, (t, 0, 2))" # Trục Z vuông góc mặt phẳng Oxy
+    },
+    "Định lý ba đường vuông góc": {
+        "định nghĩa": "Cho đường thẳng a không vuông góc với (P) và đường thẳng b nằm trong (P). b vuông góc với a khi và chỉ khi b vuông góc với hình chiếu a' của a trên (P).",
+        "kí hiệu": r"b \perp a \Leftrightarrow b \perp a'",
+        "công thức": r"\text{Giúp xác định góc giữa đường thẳng và mặt phẳng.}",
+        "ví dụ": r"\text{Dùng để chứng minh các cạnh bên vuông góc với các đường chéo của đáy.}",
+        "hình_ve": "sp.plotting.plot3d_parametric_line(t, 0, t, (t, 0, 1))" # Đường xiên và hình chiếu
+    },
+    "Hai mặt phẳng vuông góc": {
+        "định nghĩa": "Hai mặt phẳng gọi là vuông góc với nhau nếu mặt phẳng này chứa một đường thẳng vuông góc với mặt phẳng kia.",
+        "kí hiệu": r"(P) \perp (Q)",
+        "công thức": r"\begin{cases} d \perp (Q) \\ d \subset (P) \end{cases} \Rightarrow (P) \perp (Q)",
+        "ví dụ": r"\text{Mặt bên (SAB) vuông góc với mặt đáy (ABC) nếu đường cao SH vuông góc với đáy.}",
+        "hình_ve": "sp.plotting.plot3d(0, (x, -1, 1), (y, -1, 1), show=False)" # Mô phỏng mặt phẳng đứng và ngang
+    },
+    "Khoảng cách trong không gian": {
+        "định nghĩa": "Khoảng cách từ điểm M đến mặt phẳng (P) là độ dài đoạn vuông góc kẻ từ M đến (P).",
+        "kí hiệu": r"d(M, (P)) = MH \text{ (với } H \text{ là hình chiếu của } M \text{ trên } (P)\text{)}",
+        "công thức": r"\text{Khoảng cách giữa hai đường thẳng chéo nhau là độ dài đoạn vuông góc chung.}",
+        "ví dụ": r"\text{Tính chiều cao hình chóp chính là tính } d(S, (ABC)).",
+        "hình_ve": "sp.plotting.plot3d_parametric_line(0, 0, t, (t, 0, 1))"
+    },
+    "Góc trong không gian": {
+        "định nghĩa": "Góc giữa đường thẳng và mặt phẳng là góc giữa đường thẳng đó và hình chiếu của nó trên mặt phẳng.",
+        "kí hiệu": r"\varphi = (d, (P)) = (d, d')",
+        "công thức": r"0^\circ \le \varphi \le 90^\circ; \cos \varphi \text{ tính qua tích vô hướng vectơ.}",
+        "ví dụ": r"\text{Góc giữa cạnh bên và mặt đáy trong hình chóp đều.}",
+        "hình_ve": "sp.plotting.plot3d_parametric_line(t, t, 0, (t, 0, 1))"
+    }
+}
+
+chuong_9_toan_11 = {
+    "Biến cố hợp và Quy tắc cộng": {
+        "định nghĩa": "Biến cố hợp của A và B là biến cố xảy ra khi có ít nhất một trong hai biến cố A hoặc B xảy ra.",
+        "kí hiệu": r"A \cup B",
+        "công thức": r"P(A \cup B) = P(A) + P(B) - P(A \cap B). \text{ Nếu A, B xung khắc: } P(A \cup B) = P(A) + P(B)",
+        "ví dụ": r"\text{Chọn 1 thẻ từ 10 thẻ. A: 'số chẵn', B: 'số chia hết cho 5' } \Rightarrow A \cup B: \text{'số chẵn hoặc chia hết cho 5'}.",
+        "hình_ve": "plot(Piecewise((1, x < 0.3), (0.5, x < 0.7), (0, True)), (x, 0, 1), title='Bieu do Venn cho Bien co Hop')"
+    },
+    "Biến cố giao và Biến cố độc lập": {
+        "định nghĩa": "Hai biến cố độc lập nếu việc xảy ra hay không xảy ra của biến cố này không làm thay đổi xác suất xảy ra của biến cố kia.",
+        "kí hiệu": r"A \cap B \text{ hoặc } A.B",
+        "công thức": r"\text{Nếu A, B độc lập: } P(A \cap B) = P(A) \cdot P(B)",
+        "ví dụ": r"\text{Hai người cùng bắn vào bia một cách độc lập. Xác suất cả hai cùng trúng là tích xác suất của từng người.}",
+        "hình_ve": "plot(Piecewise((0.2, sp.And(x > 0.4, x < 0.6)), (0, True)), (x, 0, 1), title='Phan giao nhau giua hai bien co')"
+    },
+    "Biến cố đối (Nhắc lại và nâng cao)": {
+        "định nghĩa": "Biến cố đối của A là biến cố 'A không xảy ra'.",
+        "kí hiệu": r"\overline{A}",
+        "công thức": r"P(\overline{A}) = 1 - P(A)",
+        "ví dụ": r"\text{Tính xác suất 'có ít nhất một lần' thường thông qua biến cố đối 'không có lần nào'.}",
+        "hình_ve": "plot(1, (x, 0, 1), fill={ 'y1': 0.3 }, title='Bien co doi la phan bu trong Khong gian mau')"
+    },
+    "Xác suất có điều kiện": {
+        "định nghĩa": "Xác suất của biến cố A với điều kiện biến cố B đã xảy ra.",
+        "kí hiệu": r"P(A|B)",
+        "công thức": r"P(A|B) = \frac{P(A \cap B)}{P(B)} \text{ (với } P(B) > 0\text{)}",
+        "ví dụ": r"\text{Xác suất lấy được bi đỏ ở lần 2 khi biết lần 1 đã lấy được bi xanh (không hoàn lại).}",
+        "hình_ve": "plot(x, (x, 0, 1), title='Xac suat co dieu kien phu thuoc vao tap con B')"
+    },
+    "Sơ đồ hình cây trong xác suất": {
+        "định nghĩa": "Công cụ trực quan để tính xác suất của các phép thử nhiều giai đoạn.",
+        "kí hiệu": r"\text{Tree Diagram}",
+        "công thức": r"\text{Xác suất của một nhánh bằng tích các xác suất trên các đoạn của nhánh đó.}",
+        "ví dụ": r"\text{Sử dụng để giải các bài toán chẩn đoán y khoa hoặc sản xuất sản phẩm lỗi.}",
+        "hình_ve": "plot(sp.Heaviside(x-0.5), (x, 0, 1), title='Mo phong phan nhanh xac suat')"
+    }
 }
