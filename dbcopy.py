@@ -699,8 +699,7 @@ tu_dien_chinh = {
     "Ý nghĩa của các số đặc trưng": {"định nghĩa": r"Các số trung bình, trung vị, mốt phản ánh giá trị trung tâm của mẫu số liệu.",
                                       "kí hiệu": r"\overline{x}, Me, Mo",
                                       "công thức": r"\overline{x} \approx Me \approx Mo \text{ (khi phân bố đối xứng)}",
-                                      "ví dụ": r"Dùng để đánh giá mức độ điển hình của dữ liệu"}
-},
+                                      "ví dụ": r"Dùng để đánh giá mức độ điển hình của dữ liệu"},
     "Giới hạn của dãy số": {"định nghĩa": r"Dãy số (u_n) có giới hạn L khi n tiến tới vô cực nếu u_n tiến gần đến L.",
                              "kí hiệu": r"\lim u_n = L",
                              "công thức": r"\lim_{n \to \infty} u_n = L",
