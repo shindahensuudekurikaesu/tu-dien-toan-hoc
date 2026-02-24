@@ -878,24 +878,6 @@ tu_dien_chu_de = {
                                                                                      '(y+3)**2 - 16, (x, -3, 7), (y, '
                                                                                      "-8, 2), title='Duong tron tam "
                                                                                      "I(2, -3) ban kinh R=4')"},
-                                           'Phương trình tiếp tuyến của đường tròn': {   'định nghĩa': 'Tiếp tuyến d '
-                                                                                                       'tại điểm '
-                                                                                                       'M_0(x_0; y_0) '
-                                                                                                       'thuộc đường '
-                                                                                                       'tròn.',
-                                                                                         'kí hiệu': 'd \\text{ tiếp '
-                                                                                                    'xúc } (C)',
-                                                                                         'công thức': '(x_0 - a)(x - '
-                                                                                                      'x_0) + (y_0 - '
-                                                                                                      'b)(y - y_0) = 0 '
-                                                                                                      '\\text{ hoặc } '
-                                                                                                      'd(I, d) = R',
-                                                                                         'ví dụ': '\\text{Tiếp tuyến '
-                                                                                                  'của } x^2+y^2=5 '
-                                                                                                  '\\text{ tại } (1; '
-                                                                                                  '2) \\text{ là: } x '
-                                                                                                  '+ 2y - 5 = 0.',
-                                                                                         'hình_ve': "sp.plot_implicit(sp.Or(sp.Eq(x**2 + y**2 - 5, 0), sp.Eq(x + 2*y - 5, 0)), (x, -4, 4), (y, -4, 4), title='Duong tron va tiep tuyen tai (1, 2)')"},
                                            'Đường Elip': {   'định nghĩa': 'Tập hợp các điểm M sao cho MF_1 + MF_2 = '
                                                                            '2a.',
                                                              'kí hiệu': '(E): \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 '
