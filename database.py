@@ -1,4 +1,4 @@
-tu_dien_chu_de_3 = {
+tu_dien_chu_de = {
     'Mệnh đề và Tập hợp': {
         'Mệnh đề toán học': {
             'định nghĩa': r'''Là một câu khẳng định có tính đúng hoặc sai rõ ràng. Một mệnh đề không thể vừa đúng vừa sai.''',
