@@ -895,7 +895,7 @@ tu_dien_chu_de = {
                                                                                                   '\\text{ tại } (1; '
                                                                                                   '2) \\text{ là: } x '
                                                                                                   '+ 2y - 5 = 0.',
-                                                                                         'hình_ve': "sp.plot_implicit(sp.Or(x**2 + y**2 - 5, x + 2*y - 5), (x, -4, 4), (y, -4, 4), title='Duong tron va tiep tuyen tai (1, 2)')"},
+                                                                                         'hình_ve': "sp.plot_implicit(sp.Or(x**2 + y**2 - 5 == 0, x + 2*y - 5 == 0), (x, -4, 4), (y, -4, 4), title='Duong tron va tiep tuyen tai (1, 2)')"},
                                            'Đường Elip': {   'định nghĩa': 'Tập hợp các điểm M sao cho MF_1 + MF_2 = '
                                                                            '2a.',
                                                              'kí hiệu': '(E): \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 '
