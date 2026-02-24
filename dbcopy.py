@@ -405,11 +405,11 @@ tu_dien_chinh = {
         "hình_ve": "sp.plotting.plot(sp.binomial(x, 3), (x, 3, 10), title='To hop chap 3 cua n (C_n^3)')"
     },
     "Nhị thức Newton": {
-        "định nghĩa": r"Công thức khai triển biểu thức lũy thừa của một tổng.",
-        "kí hiệu": r"(a+b)^n",
-        "công thức bậc 4": r"(a+b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4",
-        "ví dụ": r"(x+1)^4 = x^4 + 4x^3 + 6x^2 + 4x + 1",
-        "hình_ve": "plot((x+1)**4, (x, -2, 1), title='Do thi ham nhi thuc (x+1)^4')"
+        "định nghĩa": r"Công thức khai triển biểu thức lũy thừa của một tổng hai số hạng.",
+        "kí hiệu": r"(a + b)^n",
+        "công thức": r"(a + b)^n = \sum_{k=0}^{n} C_n^k a^{n-k} b^k",
+        "ví dụ": r"(a + b)^n = C_n^0 a^n + C_n^1 a^{n-1}b + \dots + C_n^n b^n",
+        "hình_ve": "print('Tam giac Pascal minh hoa he so:'); [print([sp.binomial(n, k) for k in range(n+1)]) for n in range(6)]"
     },
     "Tam giác Pascal": {
         "định nghĩa": r"Bảng tam giác các hệ số của nhị thức Newton.",
