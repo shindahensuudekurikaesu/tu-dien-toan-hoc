@@ -951,8 +951,7 @@ tu_dien_chu_de = {   'Mệnh đề và Tập hợp': {   'Mệnh đề toán h�
                                                             'lượng giác.}',
                                                    'hình_ve': 'sp.plot_implicit(x**2 + y**2 - 1, (x, -1.5, 1.5), (y, '
                                                               "-1.5, 1.5), title='Duong tron luong giac')"},
-                      'Giá trị lượng giác của một góc': {   'định nghĩa': 'Với mỗi góc lượng giác \\alpha, xác định '
-                                                                          'các giá trị tương ứng trên các trục tọa độ.',
+                      'Giá trị lượng giác của một góc': {   'định nghĩa': r'Cho góc lượng giác alpha, gọi M(x; y) là điểm biểu diễn của góc này trên đường tròn lượng giác đơn vị. Khi đó: x = cos(alpha), y = sin(alpha).',
                                                             'kí hiệu': '\\sin\\alpha, \\cos\\alpha, \\tan\\alpha, '
                                                                        '\\cot\\alpha',
                                                             'công thức': '\\tan\\alpha = '
@@ -1068,13 +1067,12 @@ tu_dien_chu_de = {   'Mệnh đề và Tập hợp': {   'Mệnh đề toán h�
                                           'ví dụ': '\\text{Chọn 3 người đi trực nhật từ 10 người: } C_{10}^3 = 120.',
                                           'hình_ve': "sp.plotting.plot(sp.binomial(x, 3), (x, 3, 10), title='To hop "
                                                      "chap 3 cua n (C_n^3)')"},
-                            'Nhị thức Newton': {   'định nghĩa': 'Công thức khai triển biểu thức lũy thừa của một '
-                                                                 'tổng.',
-                                                   'kí hiệu': '(a+b)^n',
-                                                   'công thức bậc 4': '(a+b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4',
-                                                   'ví dụ': '(x+1)^4 = x^4 + 4x^3 + 6x^2 + 4x + 1',
-                                                   'hình_ve': "plot((x+1)**4, (x, -2, 1), title='Do thi ham nhi thuc "
-                                                              "(x+1)^4')"},
+                            'Nhị thức Newton': {    "định nghĩa": r"Công thức khai triển biểu thức lũy thừa của một tổng hai số hạng.",
+                                                    "kí hiệu": r"(a + b)^n",
+                                                    "công thức": r"(a + b)^n = \sum_{k=0}^{n} C_n^k a^{n-k} b^k",
+                                                    "ví dụ": r"(a + b)^n = C_n^0 a^n + C_n^1 a^{n-1}b + \dots + C_n^n b^n",
+                                                    "hình_ve": "print('Tam giac Pascal minh hoa he so:'); [print([sp.binomial(n, k) for k in range(n+1)]) for n in range(6)]"},
+    
                             'Tam giác Pascal': {   'định nghĩa': 'Bảng tam giác các hệ số của nhị thức Newton.',
                                                    'kí hiệu': '\\text{Pascal Triangle}',
                                                    'công thức': 'C_n^k = C_{n-1}^{k-1} + C_{n-1}^k',
