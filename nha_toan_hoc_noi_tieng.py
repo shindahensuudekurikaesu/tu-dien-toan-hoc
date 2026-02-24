@@ -82,7 +82,6 @@ math_db = {
 
 }
 
-# Hàm tìm kiếm
 def search_mathematician(name):
     if name in math_db:
         print("\nTên:", name)
@@ -91,7 +90,6 @@ def search_mathematician(name):
     else:
         print("Không tìm thấy.")
 
-# Menu
 def nthnt():
   while True:
       print("\n===== DATABASE NHÀ TOÁN HỌC =====")
@@ -111,4 +109,5 @@ def nthnt():
               print("-", name)
 
       elif choice == "3":
+
           break
