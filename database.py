@@ -681,6 +681,7 @@ chuong_4_toan_11 = {
         "công thức": r"\text{Bảo toàn tính thẳng hàng, thứ tự điểm và tỉ số độ dài đoạn thẳng song song.}",
         "ví dụ": r"\text{Hình biểu diễn của hình vuông qua phép chiếu song song là hình bình hành.}",
         "hình_ve": "sp.plotting.plot3d(x, (x, -1, 1), (y, -1, 1), show=False)"
+    },
     "Đường thẳng song song với đường thẳng": {
         "định nghĩa": "Hai đường thẳng cùng nằm trong một mặt phẳng và không có điểm chung. Trong không gian, hai đường thẳng không cùng nằm trong một mặt phẳng gọi là chéo nhau.",
         "kí hiệu": r"a \parallel b, a \text{ chéo } b",
@@ -708,7 +709,6 @@ chuong_4_toan_11 = {
         "công thức": r"\text{Các mặt bên của hình lăng trụ là các hình bình hành.}",
         "ví dụ": r"\text{Hình hộp là một trường hợp đặc biệt của hình lăng trụ có đáy là hình bình hành.}",
         "hình_ve": "sp.plotting.plot3d_parametric_line((0, 0, t), (1, 0, t), (0, 1, t), (t, 0, 1))"
-    }
     }
 }
 
@@ -961,5 +961,6 @@ chuong_9_toan_11 = {
         "hình_ve": "plot(sp.Heaviside(x-0.5), (x, 0, 1), title='Mo phong phan nhanh xac suat')"
     }
 }
+
 
 
