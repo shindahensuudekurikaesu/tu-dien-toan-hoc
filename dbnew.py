@@ -531,7 +531,7 @@ tu_dien_chu_de = {
             'công thức': 'sin(x) = sin(alpha) <=> x = alpha + k*2*pi hoặc x = pi - alpha + k*2*pi',
             'ví dụ': 'sin(x) = 0 <=> x = k*pi',
         }
-  }
+  },
   'Tổ hợp, Xác suất': {
         'Quy tắc cộng': {
             'định nghĩa': 'Một công việc được hoàn thành bởi một trong hai phương án độc lập. Phương án A có m cách, phương án B có n cách.',
