@@ -760,48 +760,6 @@ tu_dien_chu_de = {
             'ví dụ': r'''P(A) = 0.5 \text{ nghĩa là khả năng xảy ra là 50%.}''',
             'hình_ve': r'''sp.plot_implicit(sp.Or(x**2 + y**2 < 1, (x-1)**2 + y**2 < 1), (x, -2, 3), (y, -2, 2), title='Bieu do Venn minh hoa xac suat')''',
         },
-        'Giới hạn của dãy số': {
-            'định nghĩa': r'''Dãy số (u_n) có giới hạn L khi n tiến tới vô cực nếu u_n tiến gần đến L.''',
-            'kí hiệu': r'''\lim u_n = L''',
-            'công thức': r'''\lim_{n \to \infty} u_n = L''',
-            'ví dụ': r'''\lim_{n \to \infty} \dfrac{1}{n} = 0''',
-        },
-        'Giới hạn hữu hạn của dãy số': {
-            'định nghĩa': r'''Dãy số có giới hạn bằng một số thực xác định.''',
-            'kí hiệu': r'''\lim_{n \to \infty} u_n = L''',
-            'công thức': r'''\lim_{n \to \infty} c = c (c là hằng số)''',
-            'ví dụ': r'''\lim_{n \to \infty} 5 = 5''',
-        },
-        'Giới hạn vô cực của dãy số': {
-            'định nghĩa': r'''Dãy số có giá trị tăng hoặc giảm không bị chặn.''',
-            'kí hiệu': r'''\lim u_n = \pm\infty''',
-            'công thức': r'''\lim_{n \to \infty} n = +\infty''',
-            'ví dụ': r'''\lim_{n \to \infty} (-n) = -\infty''',
-        },
-        'Giới hạn của hàm số tại một điểm': {
-            'định nghĩa': r'''Hàm số f(x) có giới hạn L khi x tiến tới a nếu f(x) tiến gần đến L.''',
-            'kí hiệu': r'''\lim_{x \to a} f(x)''',
-            'công thức': r'''\lim_{x \to a} f(x) = L''',
-            'ví dụ': r'''\lim_{x \to 2} (x^2) = 4''',
-        },
-        'Giới hạn một bên': {
-            'định nghĩa': r'''Giới hạn khi x tiến đến a từ bên trái hoặc bên phải.''',
-            'kí hiệu': r'''\lim_{x \to a^-}, \lim_{x \to a^+}''',
-            'công thức': r'''\lim_{x \to a} f(x) tồn tại ⇔ \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x)''',
-            'ví dụ': r'''\lim_{x \to 0^+} \dfrac{1}{x} = +\infty''',
-        },
-        'Giới hạn vô cực của hàm số': {
-            'định nghĩa': r'''Hàm số có giá trị tăng hoặc giảm không bị chặn khi x tiến tới a hoặc vô cực.''',
-            'kí hiệu': r'''\lim_{x \to a} f(x) = \pm\infty''',
-            'công thức': r'''\lim_{x \to +\infty} \dfrac{1}{x} = 0''',
-            'ví dụ': r'''\lim_{x \to 0} \dfrac{1}{x^2} = +\infty''',
-        },
-        'Các định lí về giới hạn': {
-            'định nghĩa': r'''Các quy tắc tính giới hạn của tổng, hiệu, tích, thương.''',
-            'kí hiệu': r'''\lim (f(x) + g(x))''',
-            'công thức': r'''\lim (f(x) + g(x)) = \lim f(x) + \lim g(x)''',
-            'ví dụ': r'''\lim_{x \to 1} (x^2 + 3x) = 1 + 3 = 4''',
-        },
     },
     'Giải tích': {
         'Giới hạn của dãy số': {
